@@ -1,0 +1,14 @@
+{
+  "nom": "Kabooça",
+  "adresse": "https://kabooca-maquette.vercel.app",
+  "siteActuel": "kabooca.fr",
+  "version": 1,
+  "langues": ["fr"],
+  "navigation": ["accueil", "boutique", "sur-mesure", "maison", "contact"],
+  "actionEntete": { "page": "sur-mesure", "ancre": "configurateur" },
+  "couleurs": { "fond": "#F4EFE4", "texte": "#1E1F1C", "voile": "#1C3A2B", "theme": "#F4EFE4", "ouverture": "#F4EFE4", "menu": "#1C3A2B" },
+  "contact": { "telephone": "07 66 49 37 16", "telephoneLien": "+33766493716", "email": "contact@kabooca.fr", "adresse": "3, rue de Prilly, 30150 Roquemaure", "rue": "3, rue de Prilly", "ville": "30150 Roquemaure", "pays": "France" },
+  "polices": ["/assets/fonts/fraunces.woff2", "/assets/fonts/jost.woff2"],
+  "imagePartage": "grok/accueil-ouverture-1168.webp",
+  "curseur": true
+}

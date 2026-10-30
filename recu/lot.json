@@ -1,0 +1,258 @@
+[
+ {
+  "source": "recu/grok/accueil-ouverture.jpg",
+  "nom": "grok/accueil-ouverture",
+  "cadrage": [
+   62,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/accueil-ouverture-mobile.jpg",
+  "nom": "grok/accueil-ouverture-mobile",
+  "cadrage": [
+   50,
+   55
+  ]
+ },
+ {
+  "source": "recu/grok/accueil-patronage.jpg",
+  "nom": "grok/accueil-patronage",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/accueil-nuancier.jpg",
+  "nom": "grok/accueil-nuancier",
+  "cadrage": [
+   45,
+   60
+  ]
+ },
+ {
+  "source": "recu/grok/accueil-ruban-sangle.jpg",
+  "nom": "grok/accueil-ruban-sangle",
+  "cadrage": [
+   50,
+   45
+  ]
+ },
+ {
+  "source": "recu/grok/accueil-couture.jpg",
+  "nom": "grok/accueil-couture",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/accueil-boucles.jpg",
+  "nom": "grok/accueil-boucles",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/accueil-etabli.jpg",
+  "nom": "grok/accueil-etabli",
+  "cadrage": [
+   50,
+   55
+  ]
+ },
+ {
+  "source": "recu/grok/accueil-maison.jpg",
+  "nom": "grok/accueil-maison",
+  "cadrage": [
+   60,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/accueil-contact.jpg",
+  "nom": "grok/accueil-contact",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/boutique-ouverture.jpg",
+  "nom": "grok/boutique-ouverture",
+  "cadrage": [
+   50,
+   45
+  ]
+ },
+ {
+  "source": "recu/grok/boutique-ouverture-mobile.jpg",
+  "nom": "grok/boutique-ouverture-mobile",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/boutique-fiche-fond.jpg",
+  "nom": "grok/boutique-fiche-fond",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/sur-mesure-ouverture.jpg",
+  "nom": "grok/sur-mesure-ouverture",
+  "cadrage": [
+   70,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/sur-mesure-ouverture-mobile.jpg",
+  "nom": "grok/sur-mesure-ouverture-mobile",
+  "cadrage": [
+   50,
+   65
+  ]
+ },
+ {
+  "source": "recu/grok/sur-mesure-marquage.jpg",
+  "nom": "grok/sur-mesure-marquage",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/sur-mesure-couleurs.jpg",
+  "nom": "grok/sur-mesure-couleurs",
+  "cadrage": [
+   40,
+   55
+  ]
+ },
+ {
+  "source": "recu/grok/maison-ouverture.jpg",
+  "nom": "grok/maison-ouverture",
+  "cadrage": [
+   55,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/maison-ouverture-mobile.jpg",
+  "nom": "grok/maison-ouverture-mobile",
+  "cadrage": [
+   40,
+   55
+  ]
+ },
+ {
+  "source": "recu/grok/maison-matieres.jpg",
+  "nom": "grok/maison-matieres",
+  "cadrage": [
+   50,
+   55
+  ]
+ },
+ {
+  "source": "recu/grok/maison-gestes.jpg",
+  "nom": "grok/maison-gestes",
+  "cadrage": [
+   55,
+   40
+  ]
+ },
+ {
+  "source": "recu/grok/maison-lumiere.jpg",
+  "nom": "grok/maison-lumiere",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/contact-ouverture.jpg",
+  "nom": "grok/contact-ouverture",
+  "cadrage": [
+   55,
+   55
+  ]
+ },
+ {
+  "source": "recu/grok/contact-ouverture-mobile.jpg",
+  "nom": "grok/contact-ouverture-mobile",
+  "cadrage": [
+   50,
+   60
+  ]
+ },
+ {
+  "source": "recu/grok/mentions-ouverture.jpg",
+  "nom": "grok/mentions-ouverture",
+  "cadrage": [
+   50,
+   60
+  ]
+ },
+ {
+  "source": "recu/grok/mentions-ouverture-mobile.jpg",
+  "nom": "grok/mentions-ouverture-mobile",
+  "cadrage": [
+   50,
+   60
+  ]
+ },
+ {
+  "source": "recu/grok/cgv-ouverture.jpg",
+  "nom": "grok/cgv-ouverture",
+  "cadrage": [
+   50,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/cgv-ouverture-mobile.jpg",
+  "nom": "grok/cgv-ouverture-mobile",
+  "cadrage": [
+   60,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/confidentialite-ouverture.jpg",
+  "nom": "grok/confidentialite-ouverture",
+  "cadrage": [
+   50,
+   40
+  ]
+ },
+ {
+  "source": "recu/grok/confidentialite-ouverture-mobile.jpg",
+  "nom": "grok/confidentialite-ouverture-mobile",
+  "cadrage": [
+   50,
+   70
+  ]
+ },
+ {
+  "source": "recu/grok/404-ouverture.jpg",
+  "nom": "grok/404-ouverture",
+  "cadrage": [
+   45,
+   50
+  ]
+ },
+ {
+  "source": "recu/grok/404-ouverture-mobile.jpg",
+  "nom": "grok/404-ouverture-mobile",
+  "cadrage": [
+   40,
+   50
+  ]
+ }
+]

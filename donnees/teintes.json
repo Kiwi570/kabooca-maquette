@@ -1,0 +1,7 @@
+[
+  { "cle": "ivoire", "hex": "#E6DCC6", "nom": { "fr": "Ivoire" } },
+  { "cle": "vert", "hex": "#1F3B2D", "nom": { "fr": "Vert profond" } },
+  { "cle": "graphite", "hex": "#34352F", "nom": { "fr": "Graphite" } },
+  { "cle": "orange", "hex": "#D2541E", "nom": { "fr": "Orange signal" } },
+  { "cle": "cobalt", "hex": "#2448A8", "nom": { "fr": "Cobalt" } }
+]

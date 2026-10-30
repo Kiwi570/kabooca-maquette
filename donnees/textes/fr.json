@@ -1,0 +1,559 @@
+{
+  "commun": {
+    "navigation": "Navigation principale",
+    "menu": "Menu",
+    "fermer": "Fermer",
+    "actionEntete": "Créer la mienne",
+    "appeler": "Appeler",
+    "ecrire": "Écrire à Kabooça",
+    "accueilLogo": "Kabooça, retour à l’accueil",
+    "rechercher": "Rechercher une création",
+    "panier": "Panier",
+    "panierOuvrir": "Ouvrir le panier",
+    "calmeReduire": "Réduire les animations",
+    "calmeRetablir": "Rétablir les animations",
+    "calmeSysteme": "Animations réduites par le réglage de votre appareil",
+    "sommaire": "Sommaire",
+    "informations": "Informations",
+    "coordonnees": "Coordonnées",
+    "confort": "Confort de lecture",
+    "retourHaut": "Retour en haut",
+    "slogan": "L’élégance personnalisée.",
+    "sloganSuite": "Créations sur mesure pour l’excellence technique.",
+    "maquette": "Maquette : les informations marquées « à compléter » seront fournies par Kabooça. Croquis d’illustration en attendant les photos des pièces.",
+    "evitement": "Aller au contenu",
+    "mentionIa": "Illustration générée",
+    "pause": "Pause",
+    "lecture": "Lecture",
+    "croquis": "Croquis d’illustration · photo à fournir",
+    "croquisCourt": "Croquis d’illustration",
+    "prixACompleter": "Prix à compléter",
+    "aCompleter": "à compléter",
+    "nouvelOnglet": "(s’ouvre dans un nouvel onglet)",
+    "faitesGlisser": "Faites glisser pour voir les créations",
+    "teintesExemple": "Teintes d’exemple, à confirmer avec Kabooça.",
+    "telephoneLibelle": "Téléphone",
+    "emailLibelle": "E-mail",
+    "adresseLibelle": "Adresse"
+  },
+  "pages": {
+    "accueil": {
+      "titre": "Kabooça : l’élégance personnalisée, sacs et accessoires sur mesure",
+      "description": "Kabooça, sacs et accessoires d’exception alliant esthétique technique et design coloré. Créations sur mesure et articles personnalisés, à Roquemaure (Gard).",
+      "nav": "Accueil",
+      "partageAlt": "Kabooça : l’élégance personnalisée, cuir ivoire et sangle sur toile vert profond",
+      "accroche": "L’élégance personnalisée"
+    },
+    "boutique": {
+      "titre": "Les créations : sacs, accessoires et articles personnalisés | Kabooça",
+      "description": "Sac de Commandement, Accessoires de Précision, Sacs de Légion Étrangère et créations sur mesure : la boutique Kabooça.",
+      "nav": "Boutique",
+      "partageAlt": "La boutique Kabooça : présentoir et crochets de cuir",
+      "accroche": "Les créations"
+    },
+    "sac-de-commandement": {
+      "titre": "Sac de Commandement | Kabooça",
+      "description": "Le Sac de Commandement de Kabooça : l’élégance personnalisée en action. Fiche à compléter : matières, dimensions et prix.",
+      "nav": "Sac de Commandement",
+      "partageAlt": "Croquis du Sac de Commandement de Kabooça",
+      "accroche": "Sac de Commandement"
+    },
+    "accessoires-de-precision": {
+      "titre": "Accessoires de Précision | Kabooça",
+      "description": "Les Accessoires de Précision de Kabooça : des articles conçus pour l’excellence. Fiche à compléter : matières, dimensions et prix.",
+      "nav": "Accessoires de Précision",
+      "partageAlt": "Croquis des Accessoires de Précision de Kabooça",
+      "accroche": "Accessoires de Précision"
+    },
+    "sacs-legion-etrangere": {
+      "titre": "Sacs de Légion Étrangère | Kabooça",
+      "description": "Les Sacs de Légion Étrangère de Kabooça : technique et élégant. Fiche à compléter : matières, dimensions et prix.",
+      "nav": "Sacs de Légion Étrangère",
+      "partageAlt": "Croquis d’un sac à dos technique Kabooça",
+      "accroche": "Sacs de Légion Étrangère"
+    },
+    "sur-mesure": {
+      "titre": "L’atelier sur mesure : créer la vôtre | Kabooça",
+      "description": "Choisissez le modèle, les couleurs et le marquage : l’atelier sur mesure de Kabooça, pour un design unique.",
+      "nav": "Sur mesure",
+      "partageAlt": "Mains d’artisan cousant une bande de cuir ivoire",
+      "accroche": "Un design unique pour vous"
+    },
+    "maison": {
+      "titre": "La Maison Kabooça : technique et élégance colorée",
+      "description": "Kabooça fusionne l’esthétique technique de la Légion étrangère avec une élégance colorée et sophistiquée. Découvrez la Maison.",
+      "nav": "La Maison",
+      "partageAlt": "Atelier baigné de lumière, sangles colorées sur l’étagère",
+      "accroche": "Technique et élégance colorée"
+    },
+    "contact": {
+      "titre": "Contact : écrire à Kabooça, Roquemaure",
+      "description": "Écrire ou appeler Kabooça : 07 66 49 37 16, contact@kabooca.fr, 3, rue de Prilly, 30150 Roquemaure.",
+      "nav": "Contact",
+      "partageAlt": "Comptoir d’atelier, carnet ouvert et échantillons de sangles",
+      "accroche": "Parlons de votre pièce"
+    },
+    "mentions-legales": {
+      "titre": "Mentions légales | Kabooça",
+      "description": "Éditeur, hébergeur, propriété intellectuelle et crédits du site Kabooça.",
+      "nav": "Mentions légales",
+      "partageAlt": "Mentions légales de Kabooça",
+      "accroche": "Mentions légales"
+    },
+    "cgv": {
+      "titre": "Conditions générales de vente | Kabooça",
+      "description": "Conditions générales de vente de Kabooça, à compléter : prix, commande, livraison, rétractation, garanties.",
+      "nav": "CGV",
+      "partageAlt": "Conditions générales de vente de Kabooça",
+      "accroche": "Conditions générales de vente"
+    },
+    "confidentialite": {
+      "titre": "Politique de confidentialité | Kabooça",
+      "description": "Données recueillies par les formulaires du site Kabooça, finalités, durée de conservation et droits.",
+      "nav": "Confidentialité",
+      "partageAlt": "Politique de confidentialité de Kabooça",
+      "accroche": "Politique de confidentialité"
+    },
+    "404": {
+      "titre": "Point sauté : page introuvable | Kabooça",
+      "description": "Cette page n’existe pas ou plus.",
+      "nav": "Page introuvable",
+      "partageAlt": "Couture interrompue, fil orange qui pend",
+      "accroche": "Point sauté"
+    }
+  },
+  "croquis": {
+    "besace": "Croquis d’illustration d’une besace à rabat, avec bandoulière et deux boucles",
+    "accessoires": "Croquis d’illustration d’un porte-cartes et d’un porte-clés à mousqueton",
+    "sacADos": "Croquis d’illustration d’un sac à dos technique, avec poche avant et rangées de sangles",
+    "patron": "Croquis d’illustration d’un patron de maroquinerie et d’un nuancier",
+    "pieces": {
+      "sangle": "Sangle",
+      "rabat": "Rabat",
+      "corps": "Corps",
+      "soufflet": "Soufflet",
+      "languette": "Languettes et boucles",
+      "couture": "Coutures",
+      "largeur": "Largeur",
+      "hauteur": "Hauteur",
+      "profondeur": "Profondeur"
+    }
+  },
+  "accueil": {
+    "hero": {
+      "surtitre": "Sacs et accessoires sur mesure",
+      "titre1": "L’élégance",
+      "titre2": "personnalisée",
+      "texte": "Des sacs et accessoires d’exception alliant esthétique technique et design coloré.",
+      "action": "Créer la mienne",
+      "secondaire": "Voir les créations",
+      "info": "Sur mesure · Roquemaure (Gard)",
+      "alt": "Cuir ivoire et toile vert profond réunis par une couture orange, sangle graphite et boucle en laiton"
+    },
+    "collections": {
+      "surtitre": "Nos créations",
+      "titre": "Quatre lignes, une signature",
+      "texte": "Chaque sac et chaque accessoire est un miroir de votre identité.",
+      "region": "Les créations, défilement horizontal",
+      "voirFiche": "Voir la fiche",
+      "creer": "Créer la mienne",
+      "tout": "Toute la boutique",
+      "finTitre": "Sacs, accessoires, articles personnalisés."
+    },
+    "eclatee": {
+      "surtitre": "Pièce par pièce",
+      "titre": "Le design technique, dessiné à plat",
+      "texte": "Un sac, c’est une somme de pièces : sangle, rabat, corps, soufflets, languettes et boucles. C’est là que se joue l’alliance de la technique et de la couleur.",
+      "note": "Croquis d’illustration : les options réelles de personnalisation sont à confirmer avec Kabooça.",
+      "legende": "Les pièces du croquis",
+      "fin": "Une pièce, vos couleurs.",
+      "alt": "Patron de cuir ivoire, règle, alène et bobine de fil orange sur un tapis de coupe vert",
+      "assembler": "Réassembler le croquis",
+      "eclater": "Éclater le croquis"
+    },
+    "personnaliser": {
+      "surtitre": "Personnaliser en trois temps",
+      "titre": "Votre modèle, vos couleurs, vos initiales",
+      "etape1": "Le modèle",
+      "etape1Texte": "Partez d’une des créations, ou d’une idée à vous.",
+      "etape2": "Les couleurs",
+      "etape2Texte": "Corps et sangle : essayez les teintes sur le croquis.",
+      "etape3": "Le marquage",
+      "etape3Texte": "Vos initiales, brodées sur l’écusson.",
+      "corps": "Couleur du corps",
+      "sangle": "Couleur de la sangle",
+      "initiales": "Vos initiales",
+      "initialesAide": "Trois lettres au plus.",
+      "action": "Ouvrir l’atelier avec ces choix",
+      "alt": "Rouleaux de sangles tissées orange, cobalt, vert, ivoire et graphite, boucles en laiton"
+    },
+    "ruban": {
+      "texte": "Sur mesure • Personnalisé • Kabooça •"
+    },
+    "fabrication": {
+      "surtitre": "Le détail fait la pièce",
+      "titre": "Coutures, attaches, sangles",
+      "texte": "Nos créations allient durabilité et style. Les matières, fils et finitions de chaque pièce seront détaillés avec Kabooça.",
+      "fiche": "Fiche de fabrication",
+      "matieres": "Matières",
+      "fils": "Fils et coutures",
+      "attaches": "Attaches et boucles",
+      "finitions": "Finitions",
+      "altCouture": "Couture sellier au fil orange sur le chant d’un cuir ivoire",
+      "altEtabli": "Établi de sellier : pince à coudre, alènes, bobines de fil et bandes de cuir",
+      "altBoucles": "Boucles en laiton, anneaux et mousqueton posés sur un cuir vert",
+      "legendeCouture": "Coutures",
+      "legendeEtabli": "Atelier",
+      "legendeBoucles": "Attaches"
+    },
+    "maison": {
+      "surtitre": "La Maison",
+      "titre": "Technique et élégance colorée",
+      "texte": "Nous sommes Kabooça, une boutique d’accessoires de luxe spécialisée dans les sacs et articles de la Légion étrangère. Notre mission est de fusionner l’esthétique technique de l’unité avec une élégance colorée et sophistiquée.",
+      "action": "Découvrir la Maison",
+      "alt": "Atelier lumineux, sangles colorées suspendues à des crochets en laiton"
+    },
+    "contact": {
+      "surtitre": "Contact",
+      "titre": "Parlons de votre pièce",
+      "texte": "Une question sur une création, une idée de pièce sur mesure : écrivez ou appelez.",
+      "alt": "Carnet de commande ouvert, crayon, enveloppe kraft et échantillons de sangles"
+    }
+  },
+  "boutique": {
+    "tete": {
+      "surtitre": "La boutique",
+      "titre": "Les créations",
+      "texte": "Sacs et contenants, accessoires, articles personnalisés : les lignes de Kabooça. Chaque pièce peut devenir la vôtre.",
+      "action": "Voir le catalogue",
+      "info": "Sacs · Accessoires · Personnalisés",
+      "alt": "Présentoir de boutique vide : crochets de cuir sur une barre en laiton, étagère vert profond"
+    },
+    "catalogue": {
+      "titre": "Le catalogue",
+      "recherche": "Rechercher une création",
+      "rechercheAide": "Nom, catégorie ou mot-clé",
+      "filtres": "Filtrer par catégorie",
+      "toutes": "Toutes",
+      "resultats": "{n} création(s)",
+      "aucun": "Aucune création ne correspond à cette recherche.",
+      "effacer": "Effacer la recherche",
+      "ajouter": "Ajouter au panier",
+      "fiche": "Voir la fiche",
+      "creer": "Créer sur mesure",
+      "note": "Croquis d’illustration en attendant les photos des pièces. Prix, matières et dimensions à compléter."
+    },
+    "appel": {
+      "titre": "Une pièce qui n’existe pas encore ?",
+      "texte": "Un design unique pour vous : partez d’une idée, choisissez les couleurs et le marquage.",
+      "action": "Ouvrir l’atelier",
+      "alt": "Éventail d’échantillons de cuir ivoire, vert, graphite, orange et cobalt"
+    }
+  },
+  "fiche": {
+    "fil": "Fil d’Ariane",
+    "boutique": "Boutique",
+    "ajouter": "Ajouter au panier",
+    "personnaliser": "Personnaliser ce modèle",
+    "details": {
+      "titre": "Fiche technique",
+      "texte": "Les caractéristiques réelles de la pièce sont à compléter avec Kabooça.",
+      "matiere": "Matière",
+      "dimensions": "Dimensions (L × H × P)",
+      "poids": "Poids",
+      "coloris": "Coloris",
+      "fermeture": "Fermeture",
+      "entretien": "Entretien",
+      "delai": "Délai",
+      "galerie": "Détails en illustration",
+      "galerieTexte": "Ces images d’ambiance montrent des matières et des gestes ; les photos de la pièce sont à fournir.",
+      "ouvrir": "Agrandir : {nom}"
+    },
+    "appel": {
+      "titre": "La vôtre, à vos couleurs",
+      "texte": "Partez de ce modèle dans l’atelier : couleurs, marquage, puis votre demande.",
+      "alt": "Éventail d’échantillons de cuir ivoire, vert, graphite, orange et cobalt"
+    },
+    "autres": "Les autres créations",
+    "intitule": "Intitulé de la ligne à valider avec Kabooça (usage du nom de la Légion étrangère)."
+  },
+  "surMesure": {
+    "tete": {
+      "surtitre": "L’atelier sur mesure",
+      "titre": "Créer la vôtre",
+      "texte": "Un design unique pour vous. Quatre étapes : le modèle, les couleurs, le marquage, puis vos coordonnées.",
+      "action": "Commencer",
+      "info": "Demande simulée : rien n’est envoyé",
+      "alt": "Mains d’artisan cousant une bande de cuir ivoire au fil orange, dans une pince à coudre"
+    },
+    "configurateur": {
+      "titre": "Votre création",
+      "etapes": "Étapes de la création",
+      "etape": "Étape {n} sur 4",
+      "e1": "Le modèle",
+      "e1Texte": "Choisissez la base de votre pièce.",
+      "autre": "Une autre création",
+      "autreTexte": "Une idée à vous, à décrire à l’étape 4.",
+      "e2": "Les couleurs",
+      "e2Texte": "Essayez les teintes sur le croquis.",
+      "corps": "Corps",
+      "sangle": "Sangle",
+      "fil": "Fil des coutures",
+      "e3": "Le marquage",
+      "e3Texte": "Des initiales, un nom, une date : dites-nous ce que vous imaginez.",
+      "initiales": "Initiales (facultatif)",
+      "initialesAide": "Trois lettres au plus, affichées sur l’écusson du croquis.",
+      "idee": "Votre idée de marquage (facultatif)",
+      "e4": "Vos coordonnées",
+      "e4Texte": "Kabooça vous recontacte pour le devis.",
+      "prenom": "Prénom",
+      "nom": "Nom",
+      "email": "E-mail",
+      "tel": "Téléphone (facultatif)",
+      "message": "Votre projet (facultatif)",
+      "suivant": "Étape suivante",
+      "precedent": "Étape précédente",
+      "envoyer": "Envoyer ma demande",
+      "envoye": "Demande simulée : rien n’a été envoyé. Sur le site final, votre création partira vers Kabooça, qui vous recontactera pour le devis.",
+      "recap": "Récapitulatif",
+      "recapModele": "Modèle",
+      "recapCouleurs": "Couleurs",
+      "recapMarquage": "Marquage",
+      "recapAucun": "aucun",
+      "retractation": "Pièce personnalisée : pas de droit de rétractation (article L221-28, 3°, du Code de la consommation). Conditions à confirmer dans les CGV.",
+      "donnees": "Vos données servent seulement à répondre à votre demande de création. <a href=\"/confidentialite\">Politique de confidentialité</a> (à compléter).",
+      "altMarquage": "Écusson de cuir vierge, tambour à broder et poinçons en laiton",
+      "altCouleurs": "Éventail d’échantillons de cuir ivoire, vert, graphite, orange et cobalt"
+    },
+    "faq": {
+      "titre": "Questions fréquentes",
+      "apres": "Une autre question ?",
+      "apresTexte": "Kabooça vous répond par e-mail ou par téléphone."
+    }
+  },
+  "maison": {
+    "tete": {
+      "surtitre": "La Maison",
+      "titre": "Technique et élégance colorée",
+      "texte": "Nous sommes Kabooça, une boutique d’accessoires de luxe spécialisée dans les sacs et articles de la Légion étrangère.",
+      "action": "Découvrir les créations",
+      "info": "Roquemaure (Gard)",
+      "alt": "Atelier en lumière d’après-midi : établi en chêne, outils et rouleaux de sangles colorées"
+    },
+    "mission": {
+      "surtitre": "Notre mission",
+      "titre": "Fusionner la technique et la couleur",
+      "texte": "Notre mission est de fusionner l’esthétique technique de l’unité avec une élégance colorée et sophistiquée.",
+      "texte2": "Nos créations sont conçues pour l’individu : chaque sac et chaque accessoire est un miroir de votre identité.",
+      "alt": "Toile vert profond pliée, peau de cuir ivoire, rouleaux de sangles et bobine de fil"
+    },
+    "valeurs": {
+      "surtitre": "Ce qui nous guide",
+      "titre": "Trois exigences",
+      "v1": "L’esthétique technique",
+      "v1Texte": "Le design technique de la Légion étrangère comme point de départ.",
+      "v2": "L’élégance colorée",
+      "v2Texte": "Une esthétique colorée et audacieuse, sophistiquée.",
+      "v3": "La personnalisation",
+      "v3Texte": "Chaque création répond à la demande d’uniformisation et de personnalisation, alliant durabilité et style.",
+      "alt": "Main coupant un cuir ivoire au tranchet le long d’une règle"
+    },
+    "atelier": {
+      "surtitre": "Le savoir-faire",
+      "titre": "L’atelier",
+      "texte": "Qui dessine, qui fabrique, avec quelles matières : cette partie racontera le savoir-faire de Kabooça.",
+      "aFournir": "À compléter avec Kabooça",
+      "points": "Fondateur ou équipe · lieu de fabrication · matières et fournisseurs · gestes et étapes",
+      "croquisAlt": "Croquis d’illustration d’un patron de maroquinerie et d’un nuancier"
+    },
+    "lieu": {
+      "surtitre": "Depuis le Gard",
+      "titre": "À Roquemaure",
+      "texte": "Kabooça est basée au 3, rue de Prilly, à Roquemaure, dans le Gard.",
+      "action": "Voir l’accès",
+      "alt": "Lumière d’une fenêtre sur une peau de cuir ivoire posée sur une barre en bois"
+    },
+    "fin": {
+      "titre": "Votre pièce commence ici",
+      "texte": "Choisissez une création ou partez d’une idée."
+    }
+  },
+  "contact": {
+    "tete": {
+      "surtitre": "Contact",
+      "titre": "Écrire à Kabooça",
+      "texte": "Une question sur une création, une demande sur mesure, une commande : Kabooça vous répond.",
+      "action": "Écrire un message",
+      "alt": "Comptoir d’atelier en chêne, carnet ouvert, crayon, tasse et échantillons de sangles"
+    },
+    "formulaire": {
+      "titre": "Votre message",
+      "texte": "Formulaire simulé : rien n’est envoyé.",
+      "prenom": "Prénom",
+      "nom": "Nom",
+      "email": "E-mail",
+      "tel": "Téléphone (facultatif)",
+      "sujet": "Sujet",
+      "sujetSurMesure": "Une création sur mesure",
+      "sujetPiece": "Une question sur une pièce",
+      "sujetCommande": "Une commande",
+      "sujetAutre": "Autre demande",
+      "message": "Message",
+      "envoyer": "Envoyer le message",
+      "donnees": "Vos données servent seulement à répondre à votre message. <a href=\"/confidentialite\">Politique de confidentialité</a> (à compléter).",
+      "alt": "Carnet de commande ouvert, crayon, enveloppe kraft et échantillons de sangles"
+    },
+    "acces": {
+      "titre": "Accès",
+      "texte": "Kabooça est basée à Roquemaure, sur la rive droite du Rhône, au nord d’Avignon.",
+      "plan": "Plan schématique",
+      "planAlt": "Plan schématique : Roquemaure sur la rive droite du Rhône, entre Orange au nord et Avignon au sud, face à Châteauneuf-du-Pape",
+      "ouvrir": "Ouvrir dans un plan",
+      "horaires": "Horaires d’accueil : à compléter.",
+      "rhone": "Rhône",
+      "roquemaure": "Roquemaure",
+      "avignon": "Avignon",
+      "orange": "Orange",
+      "chateauneuf": "Châteauneuf-du-Pape"
+    }
+  },
+  "fin": {
+    "titre": "Une pièce à votre image",
+    "texte": "Choisissez une création ou partez d’une idée : l’atelier sur mesure vous guide en quatre étapes.",
+    "creer": "Créer la mienne",
+    "ecrire": "Écrire à Kabooça"
+  },
+  "panier": {
+    "titre": "Votre panier",
+    "vide": "Votre panier est vide.",
+    "voirBoutique": "Voir les créations",
+    "quantite": "Quantité",
+    "moins": "Retirer un exemplaire de {nom}",
+    "plus": "Ajouter un exemplaire de {nom}",
+    "retirer": "Retirer {nom} du panier",
+    "retirerCourt": "Retirer",
+    "total": "Total TTC",
+    "noteTotal": "Les prix TTC s’afficheront ici dès qu’ils seront fournis par Kabooça.",
+    "paiement": "Moyens de paiement : à compléter.",
+    "commander": "Commander (simulé)",
+    "commandeFaite": "Commande simulée : rien n’a été envoyé et rien n’a été payé. Votre panier a été vidé.",
+    "ajoute": "{nom} ajouté au panier.",
+    "nombre": "{n} article(s) dans le panier",
+    "fermer": "Fermer le panier"
+  },
+  "visionneuse": {
+    "titre": "Détails en grand",
+    "precedent": "Image précédente",
+    "suivant": "Image suivante",
+    "fermer": "Fermer",
+    "position": "{n} sur {total}"
+  },
+  "mentions": {
+    "titre": "Mentions légales",
+    "texte": "Les informations marquées « à compléter » sont à fournir par Kabooça avant la mise en ligne définitive.",
+    "fiche": {
+      "titre": "À fournir par Kabooça",
+      "texte": "Raison sociale et forme juridique · capital social · numéro SIREN ou SIRET et RCS · numéro de TVA intracommunautaire · nom du directeur de la publication · autorisation d’usage du nom et des insignes de la Légion étrangère, le cas échéant · photos des pièces · horaires · prix · CGV complètes."
+    },
+    "editeur": {
+      "titre": "Éditeur du site",
+      "texte": "Kabooça, 3, rue de Prilly, 30150 Roquemaure, France. Téléphone : 07 66 49 37 16. E-mail : contact@kabooca.fr. Forme juridique, capital, SIRET, RCS et directeur de la publication : à compléter."
+    },
+    "hebergeur": {
+      "titre": "Hébergeur",
+      "texte": "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis (adresse relevée sur le site de Vercel le 30 octobre 2026)."
+    },
+    "propriete": {
+      "titre": "Propriété intellectuelle",
+      "texte": "Le nom Kabooça et le logo à la cigale appartiennent à leur titulaire. Les mentions de la Légion étrangère renvoient à l’activité décrite par Kabooça ; l’usage de son nom et de ses insignes sur des produits peut relever d’une autorisation, à confirmer. Aucun insigne militaire n’est reproduit sur ce site."
+    },
+    "credits": {
+      "titre": "Crédits",
+      "texte": "Les images marquées « Illustration générée » ont été créées par intelligence artificielle ; elles montrent des ambiances et des matières, jamais une pièce de Kabooça. Les croquis des pièces sont dessinés pour la maquette, en attendant les photos. Polices Fraunces, Jost et JetBrains Mono, sous licence SIL Open Font License."
+    },
+    "donnees": {
+      "titre": "Données personnelles",
+      "texte": "Le traitement des données recueillies par les formulaires est décrit dans la <a href=\"/confidentialite\">politique de confidentialité</a>."
+    }
+  },
+  "cgv": {
+    "titre": "Conditions générales de vente",
+    "texte": "Trame à compléter par Kabooça et à faire relire par un professionnel du droit avant la mise en ligne.",
+    "objet": {
+      "titre": "Objet",
+      "texte": "Les présentes conditions régissent les ventes conclues sur le site de Kabooça entre Kabooça et ses clients consommateurs. Identité complète du vendeur : à compléter."
+    },
+    "prix": {
+      "titre": "Prix",
+      "texte": "Les prix sont indiqués en euros, toutes taxes comprises, hors frais de livraison indiqués avant la validation de la commande. Prix des pièces et des personnalisations : à compléter."
+    },
+    "commande": {
+      "titre": "Commande",
+      "texte": "Étapes de la commande, confirmation sur support durable et devis pour les créations sur mesure : à compléter."
+    },
+    "paiement": {
+      "titre": "Paiement",
+      "texte": "Moyens de paiement acceptés et moment du débit : à compléter."
+    },
+    "livraison": {
+      "titre": "Livraison",
+      "texte": "Zones, modes, délais et frais de livraison : à compléter."
+    },
+    "retractation": {
+      "titre": "Droit de rétractation",
+      "texte": "Pour une pièce de la boutique, le consommateur dispose d’un délai de quatorze jours pour exercer son droit de rétractation (article L221-18 du Code de la consommation). Modalités de retour et formulaire type : à compléter."
+    },
+    "personnalisees": {
+      "titre": "Pièces personnalisées et sur mesure",
+      "texte": "Le droit de rétractation ne s’applique pas aux biens confectionnés selon les spécifications du consommateur ou nettement personnalisés (article L221-28, 3°, du Code de la consommation). Le client en est informé avant la commande."
+    },
+    "garanties": {
+      "titre": "Garanties légales",
+      "texte": "Toutes les pièces bénéficient de la garantie légale de conformité (articles L217-3 et suivants du Code de la consommation) et de la garantie des vices cachés (articles 1641 et suivants du Code civil). Modalités de mise en œuvre : à compléter."
+    },
+    "mediation": {
+      "titre": "Médiation de la consommation",
+      "texte": "En cas de litige, le consommateur peut recourir gratuitement à un médiateur de la consommation (article L612-1 du Code de la consommation). Nom et coordonnées du médiateur : à compléter."
+    },
+    "droit": {
+      "titre": "Droit applicable",
+      "texte": "Droit français. Juridiction compétente et autres clauses : à compléter."
+    }
+  },
+  "confidentialite": {
+    "titre": "Politique de confidentialité",
+    "texte": "Politique à compléter par Kabooça (RGPD). Cette maquette n’envoie aucune donnée.",
+    "responsable": {
+      "titre": "Responsable du traitement",
+      "texte": "Kabooça, 3, rue de Prilly, 30150 Roquemaure, contact@kabooca.fr. Identité complète : à compléter."
+    },
+    "donnees": {
+      "titre": "Données recueillies",
+      "texte": "Formulaire de contact et atelier sur mesure : prénom, nom, adresse e-mail, téléphone facultatif, message et choix de création. Commandes : données à compléter."
+    },
+    "finalites": {
+      "titre": "Finalités et base légale",
+      "texte": "Répondre aux demandes et établir les devis (mesures précontractuelles), traiter les commandes (exécution du contrat). À confirmer par Kabooça."
+    },
+    "duree": {
+      "titre": "Durée de conservation",
+      "texte": "Durées de conservation de chaque catégorie de données : à compléter."
+    },
+    "navigateur": {
+      "titre": "Stockage dans votre navigateur",
+      "texte": "La maquette garde dans votre navigateur le contenu du panier, vos teintes d’essai et le réglage des animations. Rien n’est transmis. Aucun cookie de mesure d’audience n’est utilisé."
+    },
+    "droits": {
+      "titre": "Vos droits",
+      "texte": "Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité de vos données, à exercer auprès de contact@kabooca.fr. Vous pouvez aussi adresser une réclamation à la CNIL."
+    }
+  },
+  "introuvable": {
+    "surtitre": "Erreur 404",
+    "titre": "Point sauté",
+    "texte": "Cette page a sauté un point : elle n’existe pas ou plus.",
+    "retour": "Revenir à l’accueil",
+    "boutique": "Voir les créations",
+    "alt": "Couture sellier interrompue sur un cuir ivoire, le fil orange qui pend et l’aiguille posée à côté"
+  }
+}

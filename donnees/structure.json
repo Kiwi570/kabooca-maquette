@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Kabooça",
+  "url": "https://kabooca-maquette.vercel.app/",
+  "logo": "https://kabooca-maquette.vercel.app/assets/images/apple-touch-icon.png",
+  "slogan": "L’élégance personnalisée",
+  "description": { "fr": "Boutique d’accessoires de luxe spécialisée dans les sacs et articles de la Légion étrangère : sacs et accessoires personnalisés, alliant esthétique technique et design coloré." },
+  "telephone": "+33766493716",
+  "email": "contact@kabooca.fr",
+  "address": { "@type": "PostalAddress", "streetAddress": "3, rue de Prilly", "postalCode": "30150", "addressLocality": "Roquemaure", "addressCountry": "FR" }
+}

@@ -1,0 +1,10 @@
+[
+  { "cle": "sac-de-commandement", "numero": "01", "categorie": "sacs", "croquis": "besace", "fiche": true,
+    "nom": { "fr": "Sac de Commandement" }, "accroche": { "fr": "L’élégance personnalisée en action." } },
+  { "cle": "accessoires-de-precision", "numero": "02", "categorie": "accessoires", "croquis": "accessoires", "fiche": true,
+    "nom": { "fr": "Accessoires de Précision" }, "accroche": { "fr": "Des articles conçus pour l’excellence." } },
+  { "cle": "sacs-legion-etrangere", "numero": "03", "categorie": "sacs", "croquis": "sac-a-dos", "fiche": true, "intituleAValider": true,
+    "nom": { "fr": "Sacs de Légion Étrangère" }, "accroche": { "fr": "Technique et élégant." } },
+  { "cle": "creations-sur-mesure", "numero": "04", "categorie": "personnalises", "croquis": "patron", "fiche": false,
+    "nom": { "fr": "Créations Sur Mesure" }, "accroche": { "fr": "Un design unique pour vous." } }
+]

@@ -1,0 +1,5 @@
+[
+  { "cle": "sacs", "nom": { "fr": "Sacs & contenants" }, "texte": { "fr": "Modèles techniques et personnalisés" } },
+  { "cle": "accessoires", "nom": { "fr": "Accessoires" }, "texte": { "fr": "Élégance et pratique" } },
+  { "cle": "personnalises", "nom": { "fr": "Articles personnalisés" }, "texte": { "fr": "La légende en votre personne" } }
+]
