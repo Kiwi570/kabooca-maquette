@@ -24,6 +24,44 @@ ${pageTete(c, {
   media: c.media({ nom: 'grok/sur-mesure-ouverture', alt: c.s('surMesure.tete.alt'), cadrage: '72% 50%', priorite: true, classe: 'page-tete-media', sizes: '(max-width: 760px) 100vw, 50vw' }),
 })}
 
+<section class="patron-scene" id="du-patron-au-sac" data-patron>
+  <div class="conteneur patron-grille">
+    <div class="patron-texte">
+      ${surtitre(c.t('surMesure.patron.surtitre'), 'data-anime')}
+      <h2 data-anime>${c.t('surMesure.patron.titre')}</h2>
+      <p data-anime>${c.t('surMesure.patron.texte')}</p>
+      <ol class="patron-etapes" data-anime>${['tracer', 'decouper', 'assembler', 'fermer'].map((k, i) => html`<li data-etape-patron="${i}"><span class="patron-etape-num" aria-hidden="true">${i + 1}</span>${c.t('surMesure.patron.' + k)}</li>`)}</ol>
+      <p class="patron-note" data-anime>${c.t('surMesure.patron.note')}</p>
+      <p class="actions" data-anime><a class="lien-fleche" href="#configurateur">${c.t('surMesure.patron.action')}</a> <button type="button" class="bouton bouton--contour bouton--petit js-seul" data-patron-rejouer hidden>${c.t('surMesure.patron.rejouer')}</button></p>
+    </div>
+    <div class="patron-vue" data-visuel data-superpose aria-hidden="true">
+      <div class="patron-feuille"></div>
+      <div class="patron-ombre"></div>
+      <div class="patron-camera">
+        ${brut(`<svg class="patron-trace" viewBox="-0.3 -0.3 35.6 55.1" focusable="false">
+          <path d="M0 0 H5.5 V17 H0 Z"/><path d="M5.5 0 H29.5 V17 H5.5 Z"/><path d="M29.5 0 H35 V17 H29.5 Z"/>
+          <path d="M5.5 17 H29.5 V22.5 H5.5 Z"/><path d="M5.5 22.5 H29.5 V39.5 H5.5 Z"/><path d="M5.5 39.5 H29.5 V45 H5.5 Z"/>
+          <path d="M5.5 45 H29.5 V50 Q29.5 52.6 26.6 53 L19 54.2 Q17.5 54.5 16 54.2 L8.4 53 Q5.5 52.6 5.5 50 Z"/>
+        </svg>`)}
+        <div class="pp pp-avant">
+          <span class="pp-nom">${c.t('surMesure.patron.avant')}</span>
+          <div class="pp pp-souf-g"><span class="pp-nom">${c.t('surMesure.patron.soufflet')}</span></div>
+          <div class="pp pp-souf-d"><span class="pp-nom">${c.t('surMesure.patron.soufflet')}</span></div>
+          <div class="pp pp-fond"><span class="pp-nom">${c.t('surMesure.patron.fond')}</span>
+            <div class="pp pp-dos"><span class="pp-nom">${c.t('surMesure.patron.dos')}</span>
+              <div class="pp pp-dessus"><span class="pp-nom">${c.t('surMesure.patron.dessus')}</span>
+                <div class="pp pp-rabat"><span class="pp-nom">${c.t('surMesure.patron.rabat')}</span><span class="pp-pastille"><span data-initiales-patron></span></span></div>
+              </div>
+            </div>
+          </div>
+          <span class="pp-anse"></span>
+        </div>
+      </div>
+      <span class="badge-croquis">${c.t('surMesure.patron.badge')}</span>
+    </div>
+  </div>
+</section>
+
 <section class="configurateur" id="configurateur">
   <div class="conteneur config-grille">
     <form class="config-form" data-formulaire data-configurateur action="#" novalidate>

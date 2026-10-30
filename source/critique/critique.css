@@ -12,7 +12,7 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu {
 /* Voile de transition : couvre l'écran dès la première image à l'arrivée par un lien interne. */
 [data-voile] {
   position: fixed; inset: 0; z-index: 900; background: var(--voile-fond);
-  transform: translateY(100%); visibility: hidden; pointer-events: none;
+  transform: translateY(-112%); visibility: hidden; pointer-events: none;
 }
 html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] {
   transform: none; visibility: visible;

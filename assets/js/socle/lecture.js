@@ -1,6 +1,6 @@
 /* Pages longues : barre de lecture [data-barre-lecture] et sommaire qui suit la lecture [data-sommaire].
    La barre ne lit que window.scrollY et la hauteur gardée : aucune mesure pendant le défilement. */
-import { mesures } from './mesures.js?v=1';
+import { mesures } from './mesures.js?v=2';
 
 export function initLecture() {
   const barre = document.querySelector('[data-barre-lecture]');
@@ -21,9 +21,17 @@ export function initLecture() {
       const c = document.getElementById(decodeURIComponent(a.hash.slice(1)));
       if (c) liens.set(c, a);
     });
+    const ordre = [...liens.keys()];
+    const marquer = (a) => { sommaire.querySelectorAll('[aria-current]').forEach((x) => x.removeAttribute('aria-current')); if (a) a.setAttribute('aria-current', 'location'); };
     const io = new IntersectionObserver((es) => es.forEach((e) => {
       const a = liens.get(e.target);
-      if (e.isIntersecting) { sommaire.querySelectorAll('[aria-current]').forEach((x) => x.removeAttribute('aria-current')); a.setAttribute('aria-current', 'location'); }
+      if (e.isIntersecting) marquer(a);
+      /* En remontant, la section active repasse sous la bande : la précédente reprend la main,
+         et avant la première section, aucune rubrique n'est signalée. */
+      else if (a.hasAttribute('aria-current') && e.rootBounds && e.boundingClientRect.top > e.rootBounds.top) {
+        const i = ordre.indexOf(e.target);
+        marquer(i > 0 ? liens.get(ordre[i - 1]) : null);
+      }
     }), { rootMargin: '-30% 0px -60% 0px' });
     liens.forEach((_, c) => io.observe(c));
   }

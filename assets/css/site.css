@@ -25,6 +25,7 @@
   --cobalt: #2448A8;
   --laiton: #B08A3E;
   --accent: var(--vert);
+  --sur-accent: var(--graphite);
   --texte-doux: #5A5A52;
   --ligne: #D6CCB7;
   --police-titres: 'Fraunces', 'Fraunces repli', 'Times New Roman', serif;
@@ -96,7 +97,7 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) .surtitre[data-an
 .entete-icone:hover { background: var(--ivoire-2); }
 .icone { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .icone-boucle { stroke: var(--orange); }
-.panier-compte { position: absolute; top: 3px; right: 1px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 9px; background: var(--orange); color: var(--graphite); font: 600 12px/18px var(--police-mono); text-align: center; transform: scale(0); transition: transform .3s var(--courbe); }
+.panier-compte { position: absolute; top: 3px; right: 1px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 9px; background: var(--orange-texte); color: #fff; font: 600 12px/18px var(--police-mono); text-align: center; transform: scale(0); transition: transform .3s var(--courbe); }
 .panier-compte.plein { transform: scale(1); }
 .panier-compte.secoue { animation: secoue .5s var(--courbe); }
 @keyframes secoue { 30% { transform: scale(1.35); } 60% { transform: scale(.9); } }
@@ -133,9 +134,30 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) .surtitre[data-an
 .ouv-aiguille-fil { stroke: var(--orange); stroke-width: 2.2; fill: none; }
 @media (max-height: 520px) { .ouv-ligne { display: none; } }
 
-/* Voile de transition : rabat vert profond, emblème crème, nom de la page. */
-[data-voile] { color: var(--creme); }
-.voile-embleme { width: auto; height: 64px; fill: var(--creme); }
+/* Voile de transition : rabat de cuir vert profond. Il tombe d'en haut, lèvre arrondie et cousue en tête
+   (la lèvre dépasse sous le panneau : écran entièrement couvert), puis le fermoir tourniquet se verrouille. */
+[data-voile] { color: var(--creme); overflow: visible; }
+[data-voile]::before { content: ''; position: absolute; left: clamp(10px, 2vw, 22px); right: clamp(10px, 2vw, 22px); top: 0; bottom: 0; border-inline: 2px dashed var(--orange-clair); opacity: .55; pointer-events: none; }
+.voile-levre { position: absolute; left: 0; right: 0; top: calc(100% - 1px); height: min(9vh, 84px); background: var(--voile-fond); border-radius: 0 0 50% 50% / 0 0 100% 100%; box-shadow: 0 14px 24px -12px rgba(0, 0, 0, .35); }
+.voile-levre-couture { position: absolute; left: clamp(10px, 2vw, 22px); right: clamp(10px, 2vw, 22px); top: -2px; bottom: 12px; border: 2px dashed var(--orange-clair); border-top: 0; border-radius: 0 0 50% 50% / 0 0 100% 100%; opacity: .55; }
+.voile-embleme { width: auto; height: 64px; fill: var(--creme); overflow: visible; }
+.voile-fermoir { position: absolute; left: 50%; bottom: calc(5vh + env(safe-area-inset-bottom, 0px)); width: 56px; height: 56px; margin-left: -28px; overflow: visible; }
+.fermoir-plaque { fill: var(--laiton); stroke: #8C6B2B; stroke-width: 1.5; }
+.fermoir-fente { fill: #5E4719; }
+.fermoir-vis { fill: #8C6B2B; }
+.fermoir-tourne { transform-box: view-box; transform-origin: 32px 32px; fill: #D9B865; stroke: #8C6B2B; stroke-width: 1.5; }
+html[data-arrivee="voile"]:not(.voile-leve):not(.voile-part) .fermoir-tourne { transform: rotate(90deg); }
+@media (max-height: 460px) { .voile-fermoir { display: none; } }
+
+/* Cigale : les ailes pivotent autour de leur pointe haute (battement piloté par le défilement). */
+.cigale { overflow: visible; }
+.cigale .aile { transform-box: view-box; }
+.cigale .aile-g { transform-origin: var(--pivot-g); }
+.cigale .aile-d { transform-origin: var(--pivot-d); }
+.pied-logo:hover .aile-g, .entete-logo:hover .aile-g { animation: aile-g .32s 3 ease-in-out; }
+.pied-logo:hover .aile-d, .entete-logo:hover .aile-d { animation: aile-d .32s 3 ease-in-out; }
+@keyframes aile-g { 50% { transform: rotate(16deg); } }
+@keyframes aile-d { 50% { transform: rotate(-16deg); } }
 [data-voile-libelle] { font-family: var(--police-titres); font-weight: 350; font-size: clamp(1.8rem, 5vw, 3.4rem); color: var(--ivoire); text-align: center; }
 .voile-couture { display: block; width: min(220px, 50vw); height: 2px; color: var(--orange-clair); background: var(--pointille); }
 
@@ -211,7 +233,8 @@ html:not(.js) .eclatee-repere, html:not(.js) .eclatee-calque { display: none; }
 .carte-ligne { height: 100%; aspect-ratio: 3 / 4.1; display: flex; flex-direction: column; background: var(--ivoire-2); border-radius: var(--rayon); padding: 14px 14px 10px; box-shadow: inset 0 0 0 1.5px var(--ligne); }
 .carte-ligne-visuel { position: relative; flex: 1 1 auto; min-height: 0; display: grid; place-items: center; border-radius: 3px; background: #EFE8DA; box-shadow: inset 0 0 0 1.5px var(--ivoire-3); overflow: hidden; }
 .carte-ligne-visuel::after { content: ''; position: absolute; inset: 8px; border: 1.5px dashed rgba(210, 84, 30, .45); border-radius: 2px; pointer-events: none; }
-.suspente { position: absolute; top: 0; left: 50%; width: 2px; height: 9%; margin-left: -1px; background: var(--graphite); opacity: .55; }
+.suspente { position: absolute; top: 8px; left: 50%; width: 2px; height: calc(9% - 4px); margin-left: -1px; background: repeating-linear-gradient(180deg, var(--orange) 0 5px, transparent 5px 8px); }
+.suspente::before { content: ''; position: absolute; top: -9px; left: 50%; width: 12px; height: 12px; margin-left: -6px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid var(--laiton); background: var(--ivoire); }
 .suspendu { width: 82%; max-height: 92%; transform-origin: 50% 0%; display: grid; place-items: center; }
 .suspendu .croquis { max-height: 100%; width: auto; max-width: 100%; height: 100%; }
 .carte-ligne-numero { position: absolute; right: 16px; top: 12px; font: 400 clamp(1.6rem, min(3vw, 5vh), 2.6rem)/1 var(--police-titres); color: var(--orange); }
@@ -265,7 +288,7 @@ html.calme .carte-ligne-visuel, html:not(.js) .carte-ligne-visuel { aspect-ratio
 .eclatee-cote { fill: none; stroke: var(--creme); stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-dasharray: 2 3; }
 .eclatee-repere { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--vert); border: 1.5px solid var(--orange-clair); color: var(--ivoire); font: 500 13px/1 var(--police-mono); }
 .eclatee-repere--cote { width: auto; height: 24px; padding: 0 8px; border-radius: 4px; border-color: var(--creme); background: var(--vert); font-size: 12px; }
-.eclatee-fin { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 16px; font: 380 clamp(1.1rem, 1.6vw, 1.5rem)/1.2 var(--police-titres); color: var(--ivoire); }
+.eclatee-fin { position: absolute; left: 0; right: 0; bottom: 22px; margin: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 16px; font: 380 clamp(1.1rem, 1.6vw, 1.5rem)/1.2 var(--police-titres); color: var(--ivoire); }
 .eclatee-fin .lien-fleche { font: 500 1rem/1.2 var(--police-texte); color: var(--creme); }
 .eclatee-bascule-ligne { margin: 12px 0 0; text-align: center; }
 /* État de départ (avant l'animation pilotée par le défilement) : croquis assemblé au trait, repères et fin cachés. */
@@ -323,6 +346,7 @@ html.calme .eclatee-couleur, html:not(.js) .eclatee-couleur { opacity: 1; }
 .ruban { flex: 1; overflow: hidden; min-width: 0; }
 .ruban p { margin: 0; white-space: nowrap; width: max-content; font: 360 clamp(1.4rem, 2.6vw, 2.2rem)/1.2 var(--police-titres); font-style: italic; color: var(--ivoire); text-shadow: 0 1px 2px rgba(0, 0, 0, .35); animation: defile 32s linear infinite; }
 @keyframes defile { to { transform: translateX(-50%); } }
+.ruban p.ruban-js { animation: none; will-change: transform; }
 .ruban-pause { flex: none; min-height: 44px; min-width: 72px; border-radius: 999px; border: 1.5px solid var(--creme); background: var(--vert); color: var(--creme); padding: 0 14px; font-weight: 500; }
 
 /* ---------- Fabrication ---------- */
@@ -424,7 +448,7 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) .revele-couture.r
 
 /* ---------- Fiche ---------- */
 .fil-ariane { padding-top: calc(var(--entete-h) + 16px); }
-.fil-ariane ol { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; margin: 0; padding: 0; font: 500 .875rem/1.3 var(--police-mono); }
+.fil-ariane ol { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; list-style: none; margin: 0; padding: 0; font: 500 .875rem/1.3 var(--police-mono); }
 .fil-ariane li + li::before { content: '/'; margin-right: 6px; color: var(--texte-doux); }
 .fil-ariane a { display: inline-flex; align-items: center; min-height: 44px; }
 .fiche-tete { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(24px, 5vw, 80px); align-items: center; padding-bottom: clamp(40px, 6vw, 80px); }
@@ -444,6 +468,16 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) .revele-couture.r
 .vignette:hover .vignette-media img { transform: scale(1.04); }
 .vignette-media img { transition: transform .6s var(--courbe); }
 .autres { padding-block: clamp(48px, 7vw, 96px); }
+/* Téléphone à l'horizontale : le titre, le prix et le bouton tiennent dans le premier écran. */
+@media (max-height: 500px) and (min-width: 761px) {
+  .fil-ariane { padding-top: var(--entete-h); }
+  .fiche-tete { align-items: start; }
+  .fiche-texte .surtitre { margin-bottom: .4em; }
+  .fiche-texte h1 { font-size: clamp(1.7rem, 7.5vh, 2.3rem); margin: 0 0 .25em; }
+  .fiche-accroche { margin: 0 0 .4em; font-size: 1rem; }
+  .fiche-prix { margin: 0 0 .5em; }
+  .fiche-visuel { max-height: 62svh; }
+}
 @media (max-width: 760px) {
   .fil-ariane { padding-top: calc(var(--entete-h) + 8px); }
   .fiche-tete, .fiche-details { grid-template-columns: 1fr; }
@@ -514,7 +548,7 @@ html.js .config--etapes .config-bloc:not(.actif) { display: none; }
 .recap-liste dd { margin: 0; }
 @media (max-width: 900px) {
   .config-grille { grid-template-columns: 1fr; }
-  .config-recap { position: static; order: -1; }
+  .config-recap { position: static; }
   .config-croquis { max-width: 260px; margin-inline: auto; }
 }
 @media (max-width: 560px) { .modeles { grid-template-columns: 1fr; } .champs-deux { grid-template-columns: 1fr; } .config-marquage { grid-template-columns: 1fr; } .config-marquage-media { max-width: 200px; } }
@@ -532,7 +566,7 @@ html.js .config--etapes .config-bloc:not(.actif) { display: none; }
 .faq-apres { margin-top: 28px; }
 .faq-apres-titre { font: 380 1.4rem/1.2 var(--police-titres); margin-bottom: 4px; }
 .faq-media { aspect-ratio: 4 / 5; position: sticky; top: calc(var(--entete-h) + 24px); }
-@media (max-width: 760px) { .faq { grid-template-columns: 1fr; } .faq-media { position: static; aspect-ratio: 16 / 10; } }
+@media (max-width: 760px) { .faq { grid-template-columns: 1fr; } .faq-media { position: relative; top: auto; aspect-ratio: 16 / 10; } }
 
 /* ---------- La Maison ---------- */
 .valeurs { padding-block: clamp(56px, 9vw, 120px); background: var(--vert); color: var(--ivoire); }
@@ -654,6 +688,174 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) .plan-route, html
 .champ textarea { resize: vertical; }
 .mention-donnees a { color: inherit; }
 [data-message-envoi] { background: var(--ivoire); box-shadow: inset 0 0 0 1.5px var(--vert); }
+
+
+/* ================= v2 : effets vivants ================= */
+
+/* Couleur du site choisie dans le nuancier (accent) : textes accent toujours contrastés sur ivoire,
+   versions claires lisibles sur le vert profond. */
+html[data-accent="cobalt"] { --orange: #2448A8; --orange-texte: #2448A8; --orange-clair: #A9BEF5; --sur-accent: #FFFFFF; }
+html[data-accent="vert"] { --orange: #2F7A4F; --orange-texte: #23603D; --orange-clair: #9ED4B2; --sur-accent: #FFFFFF; }
+html[data-accent="graphite"] { --orange: #4A4B44; --orange-texte: #3A3B35; --orange-clair: #D9D3C4; --sur-accent: #FFFFFF; }
+html[data-accent="ivoire"] { --orange: #B89B62; --orange-texte: #6E5528; --orange-clair: #EADBB4; --sur-accent: #1E1F1C; }
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-new(root) { z-index: 2; }
+
+/* Nom de la teinte choisie, à côté de la légende du nuancier. */
+.nuancier-choix { font-weight: 400; color: var(--texte-doux); }
+.nuancier-choix:not(:empty)::before { content: ' · '; }
+
+/* Le corps porte les calques décoratifs pleine page (fil, mètre) : ils prennent exactement sa hauteur. */
+body { position: relative; padding-bottom: 0; }
+html.js [data-nav] a { white-space: nowrap; }
+/* Sans JavaScript, sur téléphone : les liens passent sous le logo, sur toute la largeur, et la hauteur
+   réservée sous l'en-tête suit (le script qui la mesure ne tourne pas). */
+@media (max-width: 560px) {
+  html:not(.js) { --entete-h: 148px; }
+  html:not(.js) .entete-rangee { flex-wrap: wrap; row-gap: 0; }
+  html:not(.js) [data-nav] { order: 3; flex: 1 1 100%; justify-content: flex-start; }
+  html:not(.js) [data-nav] ul { column-gap: 18px; row-gap: 0; }
+}
+/* Pied de page : une couture le sépare de ce qui précède (même quand le bloc d'avant est vert). */
+.pied { position: relative; }
+.pied::before { content: ''; position: absolute; left: 0; right: 0; top: 10px; height: 2px; color: var(--orange-clair); background: repeating-linear-gradient(90deg, currentColor 0 10px, transparent 10px 17px); opacity: .7; }
+
+/* Aiguille (curseur) et piqûres. */
+html.aiguille-active, html.aiguille-active * { cursor: none !important; }
+html.aiguille-active :is(input:not([type="radio"]):not([type="checkbox"]), textarea, select, [contenteditable]) { cursor: auto !important; }
+.aiguille { position: fixed; left: 0; top: -4.5px; z-index: 1003; width: 46px; height: 9px; pointer-events: none; transform-origin: 0 50%; opacity: 0; transition: opacity .2s; }
+html.aiguille-active .aiguille { opacity: 1; }
+.aiguille.aiguille-cachee { opacity: 0 !important; }
+.aiguille svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .35)); }
+.aiguille-corps { fill: #A3A69E; stroke: #2E302B; stroke-width: .7; transition: fill .2s; }
+.aiguille-chas { fill: var(--ivoire); }
+.aiguille-lien .aiguille-corps { fill: var(--orange); }
+.piqures { position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: 1002; pointer-events: none; }
+
+/* Titres cousus : aiguille qui court sur la ligne de base pendant que les lettres s'assemblent. */
+.titre-en-couture { position: relative; width: fit-content; max-width: 100%; }
+.titre-aiguille { position: absolute; left: 0; bottom: .02em; z-index: 1; width: 58px; height: 9px; pointer-events: none; }
+.titre-aiguille svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.ta-corps { fill: #A3A69E; stroke: #2E302B; stroke-width: .8; }
+.ta-chas { fill: var(--ivoire); }
+.ta-fil { fill: none; stroke: var(--orange); stroke-width: 2.2; }
+
+/* Photos qui s'étirent au défilement : couche à part, pour ne pas repeindre la page à chaque image. */
+html.js:not(.calme) main .media picture { will-change: transform; }
+
+/* Cuir vivant : canvas WebGL posé sur la photo survolée, sous les mentions. */
+.cuir { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; pointer-events: none; transition: opacity .35s var(--courbe); }
+.cuir.visible { opacity: 1; }
+
+/* Fil conducteur (accueil). */
+.fil-svg { position: absolute; left: 0; top: 0; z-index: 6; width: 100%; height: 100%; overflow: hidden; pointer-events: none; will-change: transform; }
+.fil-trace { fill: none; stroke: var(--orange); stroke-width: 2.2; stroke-dasharray: 9 6; stroke-linecap: round; }
+.fil-oeillets circle { fill: var(--ivoire); stroke: var(--laiton); stroke-width: 2; }
+.fil-aiguille { fill: #A3A69E; stroke: #2E302B; stroke-width: .8; }
+.fil-chas { fill: var(--ivoire); }
+.fil-noeud { opacity: 0; transition: opacity .5s; }
+.fil-noeud.visible { opacity: 1; }
+.fil-noeud circle { fill: var(--orange); }
+.fil-noeud path { fill: none; stroke: var(--orange); stroke-width: 2; stroke-linecap: round; }
+@media (max-width: 760px) { .fil-trace { stroke-width: 1.8; stroke-dasharray: 7 5; } }
+
+/* Mètre ruban (ordinateur et tablette). */
+.metre, .metre-lecture { display: none; }
+@media (min-width: 761px) {
+  .metre { --l: 22px; display: block; position: absolute; top: 0; bottom: 0; right: 0; z-index: 7; width: var(--l); overflow: hidden; pointer-events: none;
+    background-color: #EFE2B6;
+    background-image: repeating-linear-gradient(180deg, rgba(30, 31, 28, .8) 0 1px, transparent 1px 37.7953px), repeating-linear-gradient(180deg, rgba(30, 31, 28, .45) 0 1px, transparent 1px 18.8976px);
+    background-size: 9px 100%, 5px 100%; background-repeat: no-repeat; background-position: 0 0, 0 0;
+    box-shadow: inset 1px 0 0 rgba(30, 31, 28, .2), -3px 0 8px rgba(0, 0, 0, .08); }
+  .metre-nombre { position: absolute; left: calc(var(--l) - 8px); writing-mode: vertical-rl; transform: translate(-50%, -50%) rotate(180deg); font: 500 12px/1 var(--police-mono); color: var(--graphite); }
+  .metre-lecture { --l: 22px; position: fixed; right: 0; top: 50%; z-index: 8; display: block; width: var(--l); padding: 8px 0; writing-mode: vertical-rl; transform: translateY(-50%) rotate(180deg); line-height: var(--l); text-align: center; white-space: nowrap; border-radius: 0 4px 4px 0; background: var(--orange-texte); color: #fff; font: 600 12px/var(--l) var(--police-mono); box-shadow: 0 2px 10px rgba(0, 0, 0, .22); pointer-events: none; }
+  .metre-lecture::after { content: attr(data-valeur) '\00a0cm'; }
+  .metre-lecture::before { content: ''; position: absolute; left: 100%; top: 50%; width: 12px; height: 2px; margin-top: -1px; background: var(--orange); }
+}
+@media (min-width: 1200px) { .metre, .metre-lecture { --l: 28px; } }
+
+/* Croquis en relief : pivot 3D, pièces décalées selon leur profondeur, rabat qui bascule au survol. */
+.croquis.en-relief { --mx: 0; --my: 0; transform: perspective(900px) rotateY(calc(var(--mx) * 14deg)) rotateX(calc(var(--my) * -10deg)); transition: transform .6s var(--courbe); }
+.croquis.en-relief.relief-actif { transition: transform .15s linear; }
+.croquis.en-relief [data-piece] { translate: calc(var(--mx) * var(--prof, 0) * 16px) calc(var(--my) * var(--prof, 0) * 10px); transition: translate .6s var(--courbe), scale .75s cubic-bezier(.3, 1.35, .4, 1); }
+.croquis.en-relief.relief-actif [data-piece] { transition: translate .15s linear, scale .75s cubic-bezier(.3, 1.35, .4, 1); }
+.croquis.en-relief .c-ombre { translate: calc(var(--mx) * -12px) 0; transition: translate .6s var(--courbe); }
+.croquis [data-piece="sangle"], .croquis [data-piece="bretelles"] { --prof: -1; }
+.croquis [data-piece="feuille"] { --prof: -.5; }
+.croquis [data-piece^="soufflet"] { --prof: -.45; }
+.croquis [data-piece="porte-cartes"] { --prof: .25; }
+.croquis [data-piece="pieces"] { --prof: .45; }
+.croquis [data-piece="rabat"], .croquis [data-piece="poche"] { --prof: .6; }
+.croquis [data-piece="languettes"], .croquis [data-piece="compression"], .croquis [data-piece="porte-cles"] { --prof: .9; }
+.croquis [data-piece="nuancier"] { --prof: 1.1; }
+.croquis.en-relief [data-piece="rabat"] { transform-box: view-box; transform-origin: 200px 186px; }
+.croquis.rabat-ouvert [data-piece="rabat"] { scale: 1 -.42; }
+.croquis [data-piece="rabat"] :is(.c-ecusson, .c-fil--ecusson, .c-initiales) { transition: opacity .2s; }
+.croquis.rabat-ouvert [data-piece="rabat"] :is(.c-ecusson, .c-fil--ecusson, .c-initiales) { opacity: 0; }
+.croquis.rabat-ouvert .c-rabat { filter: brightness(.82); }
+
+/* Nuancier en éventail (pied de page) : cinq lames de cuir autour d'un rivet. */
+.eventail { margin-top: 26px; }
+.eventail-lames { position: relative; width: 236px; height: 236px; }
+.lame { position: absolute; left: 0; bottom: 0; width: 212px; height: 44px; display: flex; align-items: center; justify-content: flex-end; padding: 0 10px 0 40px; border: 0; border-radius: 6px 22px 22px 6px; background: var(--teinte); box-shadow: 0 2px 6px rgba(0, 0, 0, .3), inset 0 0 0 1px rgba(255, 255, 255, .14); transform-origin: 22px 22px; transform: rotate(calc(-6deg + var(--i) * 1.2deg)); transition: transform .8s cubic-bezier(.3, 1.4, .4, 1) calc(var(--i) * 70ms); }
+.lame::before { content: ''; position: absolute; inset: 5px 8px 5px 32px; border: 1.5px dashed rgba(255, 255, 255, .5); border-radius: 3px 16px 16px 3px; pointer-events: none; }
+.lame[style*="#E6DCC6"]::before { border-color: rgba(30, 31, 28, .35); }
+.eventail.ouvert .lame { transform: rotate(calc(-84deg + var(--i) * 20deg)); }
+.eventail.ouvert .lame:hover, .eventail.ouvert .lame:focus-visible { transform: rotate(calc(-84deg + var(--i) * 20deg)) translateX(12px); transition-delay: 0s; transition-duration: .35s; }
+.lame-nom { position: relative; padding: 4px 8px; border-radius: 3px; background: var(--ivoire); color: var(--graphite); box-shadow: 0 0 0 1px rgba(30, 31, 28, .2); font: 500 12px/1.2 var(--police-mono); letter-spacing: .03em; white-space: nowrap; }
+.lame[aria-pressed="true"] .lame-nom { background: var(--graphite); color: var(--ivoire); }
+.lame[aria-pressed="true"] .lame-nom::before { content: '✓ '; }
+.eventail-rivet { position: absolute; left: 14px; bottom: 14px; z-index: 6; width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #EAD08C, var(--laiton) 60%, #7A5B22); box-shadow: 0 1px 3px rgba(0, 0, 0, .45); pointer-events: none; }
+.eventail-note { margin: 10px 0 0; font-size: .9375rem; color: var(--sauge); }
+.pied .lame { color: var(--graphite); min-width: 44px; }
+
+/* Patron qui se plie (atelier sur mesure). */
+.patron-scene { background: var(--ivoire-2); padding-block: clamp(56px, 8vw, 110px); overflow: hidden; }
+.patron-grille { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 4vw, 72px); align-items: center; }
+.patron-texte h2 { margin: 0 0 .4em; }
+.patron-texte > p { max-width: 46ch; }
+.patron-etapes { list-style: none; margin: 18px 0 16px; padding: 0; display: grid; gap: 8px; }
+.patron-etapes li { display: flex; align-items: center; gap: 12px; font-weight: 500; color: var(--texte-doux); }
+.patron-etapes li.en-cours { color: var(--graphite); }
+.patron-etape-num { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1.5px dashed var(--orange); font: 500 12px/1 var(--police-mono); color: var(--graphite); }
+.patron-etapes li.en-cours .patron-etape-num { background: var(--orange-texte); border-color: var(--orange-texte); border-style: solid; color: #fff; }
+.patron-note { font-size: .9375rem; color: var(--texte-doux); }
+.patron-vue {
+  --u: clamp(6px, min(1.05vw, calc((100svh - var(--entete-h) - 96px) / 60)), 10px);
+  --cuir: 1; --trace: 1; --noms: 0; --plie-souf: 1; --plie-fond: 1; --plie-dos: 1; --plie-dessus: 1; --plie-rabat: 1; --anse: 1; --cam-y: 0; --cam-s: 1.45; --cam-rx: 1; --cam-ry: 1;
+  --t-corps: #1F3B2D; --t-sangle: #D2541E; --t-fil: #E6DCC6;
+  position: relative; height: calc(var(--u) * 60); perspective: 1700px; perspective-origin: 50% 35%;
+}
+.patron-feuille { position: absolute; inset: 0; border-radius: var(--rayon); background-color: var(--ivoire); background-image: linear-gradient(rgba(30, 31, 28, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 31, 28, .07) 1px, transparent 1px); background-size: calc(var(--u) * 2) calc(var(--u) * 2); background-position: center; box-shadow: inset 0 0 0 1px var(--ligne); }
+.patron-ombre { position: absolute; left: 50%; top: calc(50% + var(--u) * 14); width: calc(var(--u) * 34); height: calc(var(--u) * 5); margin-left: calc(var(--u) * -17); border-radius: 50%; background: radial-gradient(closest-side, rgba(30, 31, 28, .28), transparent); opacity: var(--anse); }
+.patron-camera { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d;
+  transform: translateY(calc(var(--cam-y) * var(--u) * -18.75)) scale(var(--cam-s)) rotateX(calc(var(--cam-rx) * -16deg)) rotateY(calc(var(--cam-ry) * -30deg)); }
+.patron-trace { max-width: none; position: absolute; left: calc(var(--u) * -17.8); top: calc(var(--u) * -8.8); width: calc(var(--u) * 35.6); height: calc(var(--u) * 55.1); overflow: visible; opacity: calc(1 - var(--trace)); }
+.patron-trace path { fill: none; stroke: var(--orange); stroke-width: .14; stroke-dasharray: 1; stroke-dashoffset: 0; stroke-linejoin: round; }
+.pp { --pp: var(--t-corps); position: absolute; box-sizing: border-box; transform-style: preserve-3d; border-radius: 2px; background-color: color-mix(in srgb, var(--pp) calc(var(--cuir) * 100%), transparent); }
+.pp::before { content: ''; position: absolute; inset: calc(var(--u) * .55); border: max(1px, calc(var(--u) * .14)) dashed color-mix(in srgb, var(--t-fil) calc(var(--cuir) * 85%), transparent); border-radius: inherit; pointer-events: none; }
+.pp-avant { left: calc(var(--u) * -12); top: calc(var(--u) * -8.5); width: calc(var(--u) * 24); height: calc(var(--u) * 17); }
+.pp-souf-g, .pp-souf-d { --pp: color-mix(in srgb, var(--t-corps) 78%, #000); top: 0; width: calc(var(--u) * 5.5); height: 100%; }
+.pp-souf-g { right: 100%; transform-origin: 100% 50%; transform: rotateY(calc(var(--plie-souf) * -90deg)); }
+.pp-souf-d { left: 100%; transform-origin: 0 50%; transform: rotateY(calc(var(--plie-souf) * 90deg)); }
+.pp-fond, .pp-dos, .pp-dessus, .pp-rabat { left: 0; top: 100%; width: 100%; transform-origin: 50% 0; }
+.pp-fond { --pp: color-mix(in srgb, var(--t-corps) 65%, #000); height: calc(var(--u) * 5.5); transform: rotateX(calc(var(--plie-fond) * -90deg)); }
+.pp-dos { --pp: color-mix(in srgb, var(--t-corps) 85%, #000); height: calc(var(--u) * 17); transform: rotateX(calc(var(--plie-dos) * -90deg)); }
+.pp-dessus { --pp: color-mix(in srgb, var(--t-corps) 88%, #fff); height: calc(var(--u) * 5.9); transform: rotateX(calc(var(--plie-dessus) * -90deg)); }
+.pp-rabat { --pp: var(--t-rabat, var(--t-corps)); height: calc(var(--u) * 9.5); border-radius: 0 0 30% 30% / 0 0 42% 42%; transform: rotateX(calc(var(--plie-rabat) * -90deg)); box-shadow: 0 calc(var(--u) * .4) calc(var(--u) * .8) rgba(0, 0, 0, calc(var(--cuir) * .25)); }
+.pp-nom { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font: 500 12px/1 var(--police-mono); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; color: var(--orange-texte); opacity: var(--noms); pointer-events: none; }
+.pp-souf-g > .pp-nom, .pp-souf-d > .pp-nom { transform: translate(-50%, -50%) rotate(-90deg); }
+.pp-pastille { position: absolute; left: 50%; top: 48%; display: grid; place-items: center; width: calc(var(--u) * 5); height: calc(var(--u) * 5); margin: calc(var(--u) * -2.5) 0 0 calc(var(--u) * -2.5); border-radius: 50%; background: var(--t-sangle); box-shadow: inset 0 0 0 calc(var(--u) * .35) color-mix(in srgb, var(--t-sangle) 70%, #000); font: 600 max(12px, calc(var(--u) * 1.6))/1 var(--police-mono); color: var(--t-fil); opacity: var(--cuir); }
+.pp-anse { position: absolute; left: 12%; right: 12%; bottom: 100%; height: calc(var(--u) * 8); box-sizing: border-box; border: calc(var(--u) * 1.1) solid var(--t-sangle); border-bottom: 0; border-radius: 50% 50% 0 0 / 100% 100% 0 0; transform-origin: 50% 100%; transform: translateZ(calc(var(--u) * -2.75)) scaleY(var(--anse)); }
+.patron-vue .badge-croquis { left: 12px; bottom: 12px; }
+@media (min-width: 1001px) and (min-height: 601px) {
+  .patron-scene { min-height: 100svh; display: flex; align-items: center; padding-block: calc(var(--entete-h) + 12px) 20px; }
+  .patron-scene > .conteneur { width: 100%; }
+}
+@media (max-width: 1000px) {
+  .patron-grille { grid-template-columns: 1fr; }
+  .patron-vue { --u: clamp(5.5px, 2.3vw, 9px); }
+}
 
 /* Mode calme et sans JavaScript : tout est visible, à sa place. */
 html.calme .revele-couture, html:not(.js) .revele-couture { clip-path: none; }

@@ -1,8 +1,8 @@
 /* Panier simulé : une seule source (localStorage), identique dans tous les onglets (événement storage),
    donnée abîmée nettoyée au chargement sans rien bloquer, tiroir avec focus gardé et Échap,
    pièce qui s'envole vers le panier, commande simulée qui vide le panier. */
-import { bloquerDefilement, debloquerDefilement, suivre, lacher } from '../socle/index.js?v=1';
-import { textes, remplir, annoncer, calme, local, garderFocus } from './outils.js?v=1';
+import { bloquerDefilement, debloquerDefilement, suivre, lacher } from '../socle/index.js?v=2';
+import { textes, remplir, annoncer, calme, local, garderFocus } from './outils.js?v=2';
 
 const CLE = 'kabooca:panier';
 let racine, liste, vide, pied, message, bouton, compte, modeles;
@@ -32,7 +32,7 @@ function rendre() {
   const l = lire();
   const n = l.reduce((s, x) => s + x.qte, 0);
   if (compte) { compte.textContent = String(n); compte.classList.toggle('plein', n > 0); }
-  if (bouton) bouton.setAttribute('aria-label', `${(textes().panier || {}).titre || ''} : ${remplir(T().nombre, { n })}`);
+  if (bouton) bouton.setAttribute('aria-label', `${(textes().panier || {}).titre || ''} : ${remplir(T().nombre, { n, s: n > 1 ? 's' : '' })}`);
   if (!liste) return;
   liste.replaceChildren(...l.map((x) => {
     const p = produits()[x.cle];

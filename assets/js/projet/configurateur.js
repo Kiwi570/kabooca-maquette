@@ -1,9 +1,9 @@
 /* Configurateur de l'atelier sur mesure : quatre étapes annoncées, hauteur animée entre les étapes,
    croquis et récapitulatif en direct, choix préremplis par l'adresse (lus par le socle), envoi simulé
    seulement à la dernière étape (le socle vérifie les champs et bloque le double envoi). */
-import { calme, textes, remplir } from './outils.js?v=1';
-import { variables, appliquer, changerTeintes, initiales } from './croquis.js?v=1';
-import { aller } from '../socle/index.js?v=1';
+import { calme, textes, remplir } from './outils.js?v=2';
+import { variables, appliquer, changerTeintes, initiales } from './croquis.js?v=2';
+import { aller } from '../socle/index.js?v=2';
 
 export function initConfigurateur() {
   const form = document.querySelector('[data-configurateur]');

@@ -64,7 +64,7 @@ export function fiche(cle) {
 
 <section class="bloc-image fiche-appel" id="personnaliser">
   <div class="conteneur bloc-image-grille">
-    ${c.media({ nom: 'grok/sur-mesure-couleurs', alt: c.s('fiche.appel.alt'), cadrage: '40% 55%', classe: 'bloc-image-media bloc-image-media--portrait', sizes: '(max-width: 760px) 100vw, 36vw' })}
+    ${c.media({ nom: 'grok/boutique-fiche-fond', alt: c.s('fiche.appel.alt'), cadrage: '72% 62%', classe: 'bloc-image-media bloc-image-media--portrait', sizes: '(max-width: 760px) 100vw, 36vw' })}
     <div class="bloc-image-texte">
       <h2 data-anime>${c.t('fiche.appel.titre')}</h2>
       <p data-anime>${c.t('fiche.appel.texte')}</p>

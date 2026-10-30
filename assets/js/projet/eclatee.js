@@ -2,9 +2,9 @@
    le croquis se décompose en pièces numérotées, les cotes se tracent, puis il se réassemble aux couleurs
    choisies par le visiteur. Sur téléphone et écran bas : il s'éclate une fois à l'écran, un bouton le
    réassemble. En mode calme : éclaté, en couleurs, repères visibles, sans mouvement. */
-import { etat } from '../socle/index.js?v=1';
-import { local, teinte } from './outils.js?v=1';
-import { variables, appliquer } from './croquis.js?v=1';
+import { etat } from '../socle/index.js?v=2';
+import { local, teinte } from './outils.js?v=2';
+import { variables, appliquer } from './croquis.js?v=2';
 
 const ECART = {
   sangle: { y: -70 }, rabat: { y: -28 }, 'soufflet-g': { x: -45 }, 'soufflet-d': { x: 45 }, languettes: { y: 40 }, corps: {},
@@ -25,7 +25,8 @@ export function initEclatee() {
   const bascule = section.querySelector('[data-eclatee-bascule]');
 
   /* Couleurs essayées dans « Personnaliser » (mémorisées), sinon celles de la maquette. */
-  const choix = local.lire('kabooca:teintes', null) || { corps: 'vert', sangle: 'orange', fil: 'ivoire' };
+  /* Par défaut, cuir ivoire : le sac se détache du fond vert (et diffère de celui de « Personnaliser »). */
+  const choix = local.lire('kabooca:teintes', null) || { corps: 'ivoire', sangle: 'orange', fil: 'graphite' };
   if (teinte(choix.corps)) appliquer(couleur, variables(choix));
 
   lignes.forEach((l) => { const n = l.getTotalLength ? l.getTotalLength() : 60; l.style.strokeDasharray = `${n} ${n}`; l.dataset.longueur = n; });

@@ -41,6 +41,12 @@
     }
   } catch (e) {}
 
+  /* Kabooça : couleur du site choisie dans le nuancier, posée avant le premier affichage. */
+  try {
+    var accent = ls && JSON.parse(ls.getItem('kabooca:accent') || 'null');
+    if (accent && /^(ivoire|vert|graphite|cobalt)$/.test(accent)) d.setAttribute('data-accent', accent);
+  } catch (e) {}
+
   /* Délai de secours : si le JavaScript du site n'a pas pris la main en 2 s,
      tout s'affiche dans son état final et rien ne sera rejoué ensuite. */
   setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);

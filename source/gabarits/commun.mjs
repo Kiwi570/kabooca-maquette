@@ -8,6 +8,13 @@ import { croquis } from './croquis.mjs';
 const LOGO = JSON.parse(readFileSync(new URL('./logo-traces.json', import.meta.url), 'utf8'));
 const boite = (b, m = 0) => `${(b[0] - m).toFixed(1)} ${(b[1] - m).toFixed(1)} ${(b[2] - b[0] + 2 * m).toFixed(1)} ${(b[3] - b[1] + 2 * m).toFixed(1)}`;
 const VB_EMBLEME = boite(LOGO.embleme.boite, 2);
+/* L'emblème en trois parties pour la cigale qui bat des ailes : corps (tête, thorax, abdomen), aile gauche, aile droite. */
+const SOUS = LOGO.embleme.d.split(/(?=M)/).filter((x) => x.trim());
+const CORPS = [0, 1, 4].map((i) => SOUS[i]).join(' ');
+const [AILE_G, AILE_D] = [SOUS[2], SOUS[3]];
+/* Pivots des ailes (pointe haute), dans le repère du <svg> extérieur (viewBox 0 0 w h). */
+const [X0, Y0] = VB_EMBLEME.split(' ').map(Number);
+const PIVOT_G = [235.8 - X0, 47.2 - Y0], PIVOT_D = [342.3 - X0, 45.3 - Y0];
 const VB_MOT = boite(LOGO.mot.boite, 1);
 
 const navigation = (c) => c.site.navigation.filter((cle) => c.pages[cle] && (c.pages[cle].langues || c.langues).includes(c.l));
@@ -72,6 +79,9 @@ ${structure ? html`<script type="application/ld+json">${brut(structure)}</script
 function definitions() {
   return brut(`<svg class="definitions" width="0" height="0" aria-hidden="true" focusable="false"><defs>
 <symbol id="logo-embleme" viewBox="${VB_EMBLEME}"><path fill-rule="evenodd" d="${LOGO.embleme.d}"/></symbol>
+<symbol id="logo-corps" viewBox="${VB_EMBLEME}"><path fill-rule="evenodd" d="${CORPS}"/></symbol>
+<symbol id="logo-aile-g" viewBox="${VB_EMBLEME}"><path fill-rule="evenodd" d="${AILE_G}"/></symbol>
+<symbol id="logo-aile-d" viewBox="${VB_EMBLEME}"><path fill-rule="evenodd" d="${AILE_D}"/></symbol>
 <symbol id="logo-mot" viewBox="${VB_MOT}"><path fill-rule="evenodd" d="${LOGO.mot.d}"/></symbol>
 <path id="logo-traces" fill-rule="evenodd" d="${LOGO.embleme.d} ${LOGO.mot.d}"/>
 </defs></svg>`);
@@ -80,6 +90,8 @@ function definitions() {
 /* Le <svg> extérieur a un viewBox d'origine 0 0 : le symbole fait lui-même sa mise à l'échelle. */
 const taille = (vb) => { const [, , w, h] = vb.split(' '); return `0 0 ${w} ${h}`; };
 export const logoEmbleme = (classe = 'logo-embleme') => brut(`<svg class="${classe}" viewBox="${taille(VB_EMBLEME)}" aria-hidden="true" focusable="false"><use href="#logo-embleme"/></svg>`);
+/* Cigale aux ailes mobiles (en-tête, voile, pied) : chaque aile pivote autour de sa pointe haute. */
+export const logoCigale = (classe = 'logo-embleme') => brut(`<svg class="${classe} cigale" viewBox="${taille(VB_EMBLEME)}" aria-hidden="true" focusable="false" style="--pivot-g:${PIVOT_G[0].toFixed(1)}px ${PIVOT_G[1].toFixed(1)}px;--pivot-d:${PIVOT_D[0].toFixed(1)}px ${PIVOT_D[1].toFixed(1)}px"><use class="aile aile-g" href="#logo-aile-g"/><use class="aile aile-d" href="#logo-aile-d"/><use href="#logo-corps"/></svg>`);
 export const logoMot = (classe = 'logo-mot') => brut(`<svg class="${classe}" viewBox="${taille(VB_MOT)}" aria-hidden="true" focusable="false"><use href="#logo-mot"/></svg>`);
 
 const icone = {
@@ -107,13 +119,18 @@ function ouverture(c) {
 }
 
 function voile(c) {
-  return html`<div data-voile aria-hidden="true"><div class="voile-contenu">${logoEmbleme('voile-embleme')}<span data-voile-libelle>${c.libelle(c.page.cle)}</span><span class="voile-couture"></span></div></div>`;
+  /* Le voile est un rabat de cuir : lèvre arrondie et cousue sous le panneau, fermoir tourniquet qui se verrouille. */
+  return html`<div data-voile aria-hidden="true">
+  <span class="voile-levre"><span class="voile-levre-couture"></span></span>
+  <div class="voile-contenu">${logoCigale('voile-embleme')}<span data-voile-libelle>${c.libelle(c.page.cle)}</span><span class="voile-couture"></span></div>
+  <svg class="voile-fermoir" viewBox="0 0 64 64" focusable="false"><rect class="fermoir-plaque" x="4" y="10" width="56" height="44" rx="10"/><rect class="fermoir-fente" x="14" y="27" width="36" height="10" rx="5"/><circle class="fermoir-vis" cx="11" cy="17" r="2"/><circle class="fermoir-vis" cx="53" cy="17" r="2"/><circle class="fermoir-vis" cx="11" cy="47" r="2"/><circle class="fermoir-vis" cx="53" cy="47" r="2"/><g class="fermoir-tourne"><rect x="27" y="15" width="10" height="34" rx="5"/><circle cx="32" cy="32" r="3"/></g></svg>
+</div>`;
 }
 
 function entete(c) {
   return html`<header data-entete>
   <div class="entete-rangee">
-    <a class="entete-logo" href="${c.url('accueil')}" data-libelle="${c.libelle('accueil')}" aria-label="${c.s('commun.accueilLogo')}"${c.page.cle === 'accueil' ? brut(' aria-current="page"') : ''}>${logoEmbleme()}${logoMot()}</a>
+    <a class="entete-logo" href="${c.url('accueil')}" data-libelle="${c.libelle('accueil')}" aria-label="${c.s('commun.accueilLogo')}"${c.page.cle === 'accueil' ? brut(' aria-current="page"') : ''}>${logoCigale()}${logoMot()}</a>
     <nav data-nav aria-label="${c.s('commun.navigation')}">
       <ul>${navigation(c).filter((k) => k !== 'accueil').map((k) => html`<li>${c.lien(k, { classe: 'nav-lien' })}</li>`)}</ul>
     </nav>
@@ -144,8 +161,16 @@ function pied(c) {
   return html`<footer class="pied" id="pied">
   <div class="conteneur pied-grille">
     <div class="pied-marque">
-      <a class="pied-logo" href="${c.url('accueil')}" data-libelle="${c.libelle('accueil')}" aria-label="${c.s('commun.accueilLogo')}">${logoEmbleme('pied-embleme')}${logoMot('pied-mot')}</a>
+      <a class="pied-logo" href="${c.url('accueil')}" data-libelle="${c.libelle('accueil')}" aria-label="${c.s('commun.accueilLogo')}">${logoCigale('pied-embleme')}${logoMot('pied-mot')}</a>
       <p class="pied-slogan">${c.t('commun.slogan')}<br>${c.t('commun.sloganSuite')}</p>
+      <div class="eventail" data-eventail data-superpose role="group" aria-labelledby="eventail-titre" data-prefixe-annonce="${c.s('commun.nuancierAnnonce')}">
+        <p class="pied-titre" id="eventail-titre">${c.t('commun.nuancierTitre')}</p>
+        <div class="eventail-lames">
+          ${c.donnees.teintes.map((t, i) => html`<button type="button" class="lame" style="--teinte:${t.hex};--i:${i}" data-accent-choix="${t.cle}" aria-pressed="false"><span class="lame-nom">${t.nom}</span></button>`)}
+          <span class="eventail-rivet" aria-hidden="true"></span>
+        </div>
+        <p class="eventail-note">${c.t('commun.nuancierNote')}</p>
+      </div>
     </div>
     <div>
       <p class="pied-titre">${c.t('commun.coordonnees')}</p>
@@ -165,7 +190,7 @@ function pied(c) {
       </ul>
     </div>
   </div>
-  <div class="conteneur pied-bas"><p>${c.t('commun.maquette')}</p><p>© ${c.site.nom}</p></div>
+  <div class="conteneur pied-bas"><p>${c.t('commun.maquette')}</p><p>© 2026 ${c.site.nom}</p></div>
 </footer>`;
 }
 

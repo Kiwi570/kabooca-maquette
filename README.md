@@ -11,12 +11,30 @@ Site statique prêt pour Vercel (`cleanUrls`), sans étape de construction : les
 | `/` | Promesse, les quatre lignes (galerie épinglée), vue éclatée du croquis, personnalisation (teintes et initiales), ruban, fabrication, la Maison, contact |
 | `/boutique` | Catalogue filtrable (`?categorie=sacs`) avec recherche (`?q=…`), ajout au panier |
 | `/boutique/sac-de-commandement`, `/boutique/accessoires-de-precision`, `/boutique/sacs-legion-etrangere` | Fiches : croquis qui se dessine, fiche technique à compléter, détails en visionneuse (`#detail-1`…), personnalisation |
-| `/sur-mesure` | Atelier en quatre étapes, choix préremplis par l'adresse (`?modele=…&corps=…&sangle=…&fil=…&initiales=…`), FAQ |
+| `/sur-mesure` | Patron qui se plie en besace (3D), atelier en quatre étapes, choix préremplis par l'adresse (`?modele=…&corps=…&sangle=…&fil=…&initiales=…`), FAQ |
 | `/maison` | Mission, trois exigences, atelier (à compléter), Roquemaure |
 | `/contact` | Coordonnées, formulaire (`?sujet=sur-mesure`), plan schématique |
 | `/mentions-legales`, `/cgv`, `/confidentialite`, `404` | Pages légales à compléter, page « Point sauté » |
 
 Le panier (tiroir) est présent sur toutes les pages.
+
+## Effets (v2)
+
+| Effet | Où | Fichier |
+|---|---|---|
+| Rabat de transition (lèvre cousue, fermoir tourniquet) | entre les pages | `assets/js/socle/transitions.js`, `ouverture.js` |
+| Cigale qui bat des ailes selon le défilement | en-tête, voile, pied | `assets/js/projet/cigale.js` |
+| Titres cousus, étiquettes qui se décodent | tous les titres de section | `assets/js/projet/titres.js` |
+| Aiguille (curseur) et piqûres | ordinateur, souris | `assets/js/projet/aiguille.js` |
+| Cuir vivant (WebGL : creux sous la souris, lumière rasante), étirement au défilement | grandes photos | `assets/js/projet/cuir.js` |
+| Fil conducteur cousu au défilement | accueil | `assets/js/projet/fil.js` |
+| Croquis en relief, rabat qui s'ouvre | croquis (cartes, fiches, atelier) | `assets/js/projet/relief.js` |
+| Nuancier en éventail qui recolore le site | pied de page | `assets/js/projet/nuancier.js` |
+| Patron qui se plie en sac (3D CSS) | atelier sur mesure | `assets/js/projet/patron.js` |
+| Mètre ruban (vraies unités, 1 cm = 37,8 px) | bord droit, ordinateur et tablette | `assets/js/projet/metre.js` |
+| Ruban qui accélère avec le défilement | accueil | `assets/js/projet/ruban.js` |
+
+Tout est coupé en mode calme (réglage de l'appareil ou lien « Réduire les animations ») ; le contenu reste complet.
 
 ## Travailler sur le site
 

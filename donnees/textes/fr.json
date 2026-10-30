@@ -3,7 +3,7 @@
     "navigation": "Navigation principale",
     "menu": "Menu",
     "fermer": "Fermer",
-    "actionEntete": "Créer la mienne",
+    "actionEntete": "Créer ma pièce",
     "appeler": "Appeler",
     "ecrire": "Écrire à Kabooça",
     "accueilLogo": "Kabooça, retour à l’accueil",
@@ -34,7 +34,10 @@
     "teintesExemple": "Teintes d’exemple, à confirmer avec Kabooça.",
     "telephoneLibelle": "Téléphone",
     "emailLibelle": "E-mail",
-    "adresseLibelle": "Adresse"
+    "adresseLibelle": "Adresse",
+    "nuancierTitre": "Couleur du site",
+    "nuancierNote": "Choisissez un cuir : le site en prend la couleur.",
+    "nuancierAnnonce": "Couleur du site :"
   },
   "pages": {
     "accueil": {
@@ -145,7 +148,7 @@
       "titre1": "L’élégance",
       "titre2": "personnalisée",
       "texte": "Des sacs et accessoires d’exception alliant esthétique technique et design coloré.",
-      "action": "Créer la mienne",
+      "action": "Créer ma pièce",
       "secondaire": "Voir les créations",
       "info": "Sur mesure · Roquemaure (Gard)",
       "alt": "Cuir ivoire et toile vert profond réunis par une couture orange, sangle graphite et boucle en laiton"
@@ -156,7 +159,7 @@
       "texte": "Chaque sac et chaque accessoire est un miroir de votre identité.",
       "region": "Les créations, défilement horizontal",
       "voirFiche": "Voir la fiche",
-      "creer": "Créer la mienne",
+      "creer": "Créer ma pièce",
       "tout": "Toute la boutique",
       "finTitre": "Sacs, accessoires, articles personnalisés."
     },
@@ -169,7 +172,8 @@
       "fin": "Une pièce, vos couleurs.",
       "alt": "Patron de cuir ivoire, règle, alène et bobine de fil orange sur un tapis de coupe vert",
       "assembler": "Réassembler le croquis",
-      "eclater": "Éclater le croquis"
+      "eclater": "Éclater le croquis",
+      "essayer": "Essayer vos couleurs"
     },
     "personnaliser": {
       "surtitre": "Personnaliser en trois temps",
@@ -179,11 +183,11 @@
       "etape2": "Les couleurs",
       "etape2Texte": "Corps et sangle : essayez les teintes sur le croquis.",
       "etape3": "Le marquage",
-      "etape3Texte": "Vos initiales, brodées sur l’écusson.",
+      "etape3Texte": "Vos initiales sur la pastille (technique de marquage à confirmer avec Kabooça).",
       "corps": "Couleur du corps",
       "sangle": "Couleur de la sangle",
       "initiales": "Vos initiales",
-      "initialesAide": "Trois lettres au plus.",
+      "initialesAide": "Trois lettres dans cette maquette ; nombre réel à confirmer.",
       "action": "Ouvrir l’atelier avec ces choix",
       "alt": "Rouleaux de sangles tissées orange, cobalt, vert, ivoire et graphite, boucles en laiton"
     },
@@ -194,7 +198,7 @@
       "surtitre": "Le détail fait la pièce",
       "titre": "Coutures, attaches, sangles",
       "texte": "Nos créations allient durabilité et style. Les matières, fils et finitions de chaque pièce seront détaillés avec Kabooça.",
-      "fiche": "Fiche de fabrication",
+      "fiche": "Fiche de la pièce",
       "matieres": "Matières",
       "fils": "Fils et coutures",
       "attaches": "Attaches et boucles",
@@ -235,7 +239,7 @@
       "rechercheAide": "Nom, catégorie ou mot-clé",
       "filtres": "Filtrer par catégorie",
       "toutes": "Toutes",
-      "resultats": "{n} création(s)",
+      "resultats": "{n} création{s}",
       "aucun": "Aucune création ne correspond à cette recherche.",
       "effacer": "Effacer la recherche",
       "ajouter": "Ajouter au panier",
@@ -247,7 +251,7 @@
       "titre": "Une pièce qui n’existe pas encore ?",
       "texte": "Un design unique pour vous : partez d’une idée, choisissez les couleurs et le marquage.",
       "action": "Ouvrir l’atelier",
-      "alt": "Éventail d’échantillons de cuir ivoire, vert, graphite, orange et cobalt"
+      "alt": "Cuir ivoire drapé sur une barre en bois, sangles vertes et mousqueton sur l’établi"
     }
   },
   "fiche": {
@@ -259,7 +263,7 @@
       "titre": "Fiche technique",
       "texte": "Les caractéristiques réelles de la pièce sont à compléter avec Kabooça.",
       "matiere": "Matière",
-      "dimensions": "Dimensions (L × H × P)",
+      "dimensions": "Dimensions (L × H × P)",
       "poids": "Poids",
       "coloris": "Coloris",
       "fermeture": "Fermeture",
@@ -272,7 +276,7 @@
     "appel": {
       "titre": "La vôtre, à vos couleurs",
       "texte": "Partez de ce modèle dans l’atelier : couleurs, marquage, puis votre demande.",
-      "alt": "Éventail d’échantillons de cuir ivoire, vert, graphite, orange et cobalt"
+      "alt": "Toile ivoire bordée d’une sangle brune piquée de fil orange et cobalt, près d’un cuir vert"
     },
     "autres": "Les autres créations",
     "intitule": "Intitulé de la ligne à valider avec Kabooça (usage du nom de la Légion étrangère)."
@@ -302,7 +306,7 @@
       "e3": "Le marquage",
       "e3Texte": "Des initiales, un nom, une date : dites-nous ce que vous imaginez.",
       "initiales": "Initiales (facultatif)",
-      "initialesAide": "Trois lettres au plus, affichées sur l’écusson du croquis.",
+      "initialesAide": "Trois lettres dans cette maquette, affichées sur la pastille du croquis ; nombre réel à confirmer.",
       "idee": "Votre idée de marquage (facultatif)",
       "e4": "Vos coordonnées",
       "e4Texte": "Kabooça vous recontacte pour le devis.",
@@ -329,6 +333,25 @@
       "titre": "Questions fréquentes",
       "apres": "Une autre question ?",
       "apresTexte": "Kabooça vous répond par e-mail ou par téléphone."
+    },
+    "patron": {
+      "surtitre": "Du patron au sac",
+      "titre": "Une feuille, sept pièces, une besace",
+      "texte": "Avant d’être cousue, une pièce est un patron : des formes tracées à plat, découpées, puis assemblées. Faites défiler, le patron se plie sous vos yeux, aux couleurs choisies dans l’atelier ci-dessous.",
+      "tracer": "Tracer le patron",
+      "decouper": "Découper les pièces",
+      "assembler": "Plier et assembler",
+      "fermer": "Fermer le rabat",
+      "note": "Schéma d’illustration : pièces et proportions indicatives, à valider avec Kabooça.",
+      "action": "Choisir mes couleurs",
+      "rejouer": "Rejouer",
+      "badge": "Schéma d’illustration",
+      "avant": "Avant",
+      "soufflet": "Soufflet",
+      "fond": "Fond",
+      "dos": "Dos",
+      "dessus": "Dessus",
+      "rabat": "Rabat"
     }
   },
   "maison": {
@@ -420,7 +443,7 @@
   "fin": {
     "titre": "Une pièce à votre image",
     "texte": "Choisissez une création ou partez d’une idée : l’atelier sur mesure vous guide en quatre étapes.",
-    "creer": "Créer la mienne",
+    "creer": "Créer ma pièce",
     "ecrire": "Écrire à Kabooça"
   },
   "panier": {
@@ -438,7 +461,7 @@
     "commander": "Commander (simulé)",
     "commandeFaite": "Commande simulée : rien n’a été envoyé et rien n’a été payé. Votre panier a été vidé.",
     "ajoute": "{nom} ajouté au panier.",
-    "nombre": "{n} article(s) dans le panier",
+    "nombre": "{n} article{s} dans le panier",
     "fermer": "Fermer le panier"
   },
   "visionneuse": {
@@ -461,7 +484,7 @@
     },
     "hebergeur": {
       "titre": "Hébergeur",
-      "texte": "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis (adresse relevée sur le site de Vercel le 30 octobre 2026)."
+      "texte": "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis (adresse relevée sur le site de Vercel le 30 octobre 2026). Téléphone de l’hébergeur : à compléter."
     },
     "propriete": {
       "titre": "Propriété intellectuelle",

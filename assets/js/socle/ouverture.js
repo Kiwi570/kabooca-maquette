@@ -9,10 +9,10 @@
    - section : rechargement dû au bouton du mode calme : état final, retour à la section.
    - calme, secours : état final directement.
    Aucune attente ne peut bloquer l'écran : en cas d'erreur, la page passe dans son état final. */
-import { html, etat, emettre, stockage, prochaineImage, attendre } from './etat.js?v=1';
-import { bloquerDefilement, debloquerDefilement, aller } from './defilement.js?v=1';
-import { toutAfficher, demarrerApparitions } from './apparitions.js?v=1';
-import { suivre, lacher, lacherTout } from './gouttiere.js?v=1';
+import { html, etat, emettre, stockage, prochaineImage, attendre } from './etat.js?v=2';
+import { bloquerDefilement, debloquerDefilement, aller } from './defilement.js?v=2';
+import { toutAfficher, demarrerApparitions } from './apparitions.js?v=2';
+import { suivre, lacher, lacherTout } from './gouttiere.js?v=2';
 
 const MAX_ATTENTE = 1500;
 const BUDGET = 2900; /* ms depuis le premier octet jusqu'à la fin de l'intro */
@@ -34,9 +34,14 @@ function voile() { return document.querySelector('[data-voile]'); }
 function leverVoile() {
   const v = voile();
   if (!v || etat.calme) { html.classList.add('voile-leve'); return Promise.resolve(); }
-  const a = v.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-100%)' }],
-    { duration: 520, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'forwards' });
-  return a.finished.catch(() => {}).then(() => { html.classList.add('voile-leve'); a.cancel(); });
+  /* Rabat (Kabooça) : le fermoir s'ouvre, puis le rabat se relève et sort de l'écran avec sa lèvre. */
+  const t = v.querySelector('.fermoir-tourne');
+  const ouvre = t && t.animate ? t.animate([{ transform: 'rotate(90deg)' }, { transform: 'rotate(0deg)' }], { duration: 130, easing: 'cubic-bezier(.5,0,.2,1.4)', fill: 'forwards' }).finished.catch(() => {}) : Promise.resolve();
+  return ouvre.then(() => {
+    const a = v.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-112%)' }],
+      { duration: 560, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'forwards' });
+    return a.finished.catch(() => {}).then(() => { html.classList.add('voile-leve'); a.cancel(); t && t.getAnimations().forEach((x) => x.cancel()); });
+  });
 }
 
 function marquerPret(mode) {
@@ -176,8 +181,9 @@ export async function ouvrir(o = {}) {
     if (!e.persisted) return;
     restauree = true;
     const v = voile();
-    if (v) { v.getAnimations().forEach((a) => a.cancel()); v.style.visibility = ''; }
+    if (v) { v.getAnimations({ subtree: true }).forEach((a) => a.cancel()); v.style.visibility = ''; }
     html.classList.add('voile-leve');
+    html.classList.remove('voile-part');
     html.classList.remove('intro-en-cours');
     ['intro', 'voile', 'depart', 'menu', 'saut', 'fin-geste'].forEach(debloquerDefilement);
     lacherTout();

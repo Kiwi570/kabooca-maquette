@@ -43,7 +43,7 @@ function eclatee(c) {
         <span class="eclatee-repere eclatee-repere--cote" data-repere data-cote style="${pct([200, 412])}" aria-hidden="true">L</span>
         <span class="eclatee-repere eclatee-repere--cote" data-repere data-cote style="${pct([428, 271])}" aria-hidden="true">H</span>
       </div>
-      <p class="eclatee-fin"><span data-eclatee-fin>${c.t('accueil.eclatee.fin')}</span> ${c.lien('sur-mesure', { ancre: 'configurateur', classe: 'lien-fleche', texte: c.t('accueil.personnaliser.action') })}</p>
+      <p class="eclatee-fin"><span data-eclatee-fin>${c.t('accueil.eclatee.fin')}</span> <a class="lien-fleche" href="#personnaliser">${c.t('accueil.eclatee.essayer')}</a></p>
       <p class="eclatee-bascule-ligne"><button type="button" class="bouton bouton--contour bouton--petit bouton--creme-contour" data-eclatee-bascule hidden data-libelle-assembler="${c.s('accueil.eclatee.assembler')}" data-libelle-eclater="${c.s('accueil.eclatee.eclater')}">${c.t('accueil.eclatee.assembler')}</button></p>
     </div>
   </div>
@@ -64,8 +64,8 @@ function personnaliser(c) {
         <li><strong>${c.t('accueil.personnaliser.etape3')}</strong> ${c.t('accueil.personnaliser.etape3Texte')}</li>
       </ol>
       <div class="perso-reglages" data-perso>
-        <fieldset class="nuancier"><legend>${c.t('accueil.personnaliser.corps')}</legend><div class="pastilles">${pastilles('corps', 'vert')}</div></fieldset>
-        <fieldset class="nuancier"><legend>${c.t('accueil.personnaliser.sangle')}</legend><div class="pastilles">${pastilles('sangle', 'orange')}</div></fieldset>
+        <fieldset class="nuancier"><legend>${c.t('accueil.personnaliser.corps')}<span class="nuancier-choix" data-choix-nom="corps"></span></legend><div class="pastilles">${pastilles('corps', 'vert')}</div></fieldset>
+        <fieldset class="nuancier"><legend>${c.t('accueil.personnaliser.sangle')}<span class="nuancier-choix" data-choix-nom="sangle"></span></legend><div class="pastilles">${pastilles('sangle', 'orange')}</div></fieldset>
         <div class="champ champ--court">
           <label for="perso-initiales">${c.t('accueil.personnaliser.initiales')}</label>
           <input id="perso-initiales" name="initiales" maxlength="3" autocomplete="off" spellcheck="false" aria-describedby="perso-initiales-aide" data-initiales-champ>

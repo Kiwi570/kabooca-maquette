@@ -3,36 +3,54 @@
    de démarrer couverte) ; 3. la nouvelle page se prépare sous le voile ; 4. le voile se retire.
    Les liens vers la page en cours font défiler sans recharger (chemins normalisés, cleanUrls).
    Les grands sauts dans une même page passent aussi sous le voile. */
-import { html, etat, chemin, stockage, emettre } from './etat.js?v=1';
-import { aller, bloquerDefilement, debloquerDefilement } from './defilement.js?v=1';
-import { fermerMenu } from './entete.js?v=1';
-import { suivre, lacher } from './gouttiere.js?v=1';
+import { html, etat, chemin, stockage, emettre } from './etat.js?v=2';
+import { aller, bloquerDefilement, debloquerDefilement } from './defilement.js?v=2';
+import { fermerMenu } from './entete.js?v=2';
+import { suivre, lacher } from './gouttiere.js?v=2';
 
 const prechargees = new Set();
 let enDepart = false;
 
 function voile() { return document.querySelector('[data-voile]'); }
 
-function couvrir(duree = 450) {
-  const v = voile();
-  if (!v || etat.calme) return Promise.resolve();
-  html.classList.remove('voile-leve');
-  v.style.visibility = 'visible';
-  const a = v.animate([{ transform: 'translateY(100%)' }, { transform: 'translateY(0)' }],
-    { duration: duree, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'forwards' });
+/* Rabat (Kabooça) : le panneau tombe d'en haut, sa lèvre cousue en tête, puis le fermoir se verrouille.
+   Il se relève vers le haut ; -112 % : la lèvre arrondie sous le panneau sort aussi de l'écran. */
+const HORS = 'translateY(-112%)';
+
+function fermoir(ferme, duree) {
+  const t = voile() && voile().querySelector('.fermoir-tourne');
+  if (!t || !t.animate) return Promise.resolve();
+  const a = t.animate([{ transform: `rotate(${ferme ? 0 : 90}deg)` }, { transform: `rotate(${ferme ? 90 : 0}deg)` }],
+    { duration: duree, easing: 'cubic-bezier(.5,0,.2,1.4)', fill: 'forwards' });
   return a.finished.catch(() => {});
 }
 
-function decouvrir(duree = 450) {
+async function couvrir(duree = 480) {
   const v = voile();
-  if (!v || etat.calme) return Promise.resolve();
-  const a = v.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-100%)' }],
+  if (!v || etat.calme) return;
+  html.classList.add('voile-part');
+  html.classList.remove('voile-leve');
+  v.style.visibility = 'visible';
+  emettre('voile', { sens: 'couvre' });
+  const a = v.animate([{ transform: HORS }, { transform: 'translateY(0)' }],
+    { duration: duree, easing: 'cubic-bezier(.7,0,.25,1)', fill: 'forwards' });
+  await a.finished.catch(() => {});
+  await fermoir(true, 150);
+}
+
+async function decouvrir(duree = 480) {
+  const v = voile();
+  if (!v || etat.calme) return;
+  await fermoir(false, 130);
+  const a = v.animate([{ transform: 'translateY(0)' }, { transform: HORS }],
     { duration: duree, easing: 'cubic-bezier(.65,0,.35,1)', fill: 'forwards' });
-  return a.finished.catch(() => {}).then(() => {
-    v.getAnimations().forEach((x) => x.cancel());
-    v.style.visibility = '';
-    html.classList.add('voile-leve');
-  });
+  await a.finished.catch(() => {});
+  v.getAnimations().forEach((x) => x.cancel());
+  const t = v.querySelector('.fermoir-tourne');
+  t && t.getAnimations().forEach((x) => x.cancel());
+  v.style.visibility = '';
+  html.classList.add('voile-leve');
+  html.classList.remove('voile-part');
 }
 
 function lienInterne(a, e) {
@@ -82,7 +100,7 @@ export async function partir(url, libelle) {
   bloquerDefilement('depart');
   suivre(voile());
   /* Garde-fou : la navigation part même si l'animation ne se termine pas. */
-  const secours = setTimeout(() => (location.href = url.href), 900);
+  const secours = setTimeout(() => (location.href = url.href), 1100);
   await couvrir();
   clearTimeout(secours);
   location.href = url.href;

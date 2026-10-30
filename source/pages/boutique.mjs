@@ -31,7 +31,7 @@ ${pageTete(c, {
         ${cats.map((k) => html`<button type="button" class="puce" data-filtre="${k.cle}" aria-pressed="false"${compte(k.cle) ? '' : html` disabled`}>${k.nom} <span class="puce-nombre">${compte(k.cle)}</span></button>`)}
       </div>
     </div>
-    <p class="catalogue-resultat" data-resultat aria-live="polite">${c.t('boutique.catalogue.resultats', { n: c.donnees.catalogue.length })}</p>
+    <p class="catalogue-resultat" data-resultat aria-live="polite">${c.t('boutique.catalogue.resultats', { n: c.donnees.catalogue.length, s: c.donnees.catalogue.length > 1 ? 's' : '' })}</p>
   </div>
   <div class="catalogue-grille" data-grille>
     ${c.donnees.catalogue.map((p) => carteCreation(c, p))}
@@ -45,7 +45,7 @@ ${pageTete(c, {
 
 <section class="bloc-image appel-atelier" id="sur-mesure-appel">
   <div class="conteneur bloc-image-grille">
-    ${c.media({ nom: 'grok/sur-mesure-couleurs', alt: c.s('boutique.appel.alt'), cadrage: '40% 55%', classe: 'bloc-image-media bloc-image-media--portrait', sizes: '(max-width: 760px) 100vw, 38vw' })}
+    ${c.media({ nom: 'grok/maison-lumiere', alt: c.s('boutique.appel.alt'), cadrage: '55% 50%', classe: 'bloc-image-media bloc-image-media--portrait', sizes: '(max-width: 760px) 100vw, 38vw' })}
     <div class="bloc-image-texte">
       <h2 data-anime>${c.t('boutique.appel.titre')}</h2>
       <p data-anime>${c.t('boutique.appel.texte')}</p>

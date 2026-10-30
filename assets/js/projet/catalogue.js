@@ -1,8 +1,8 @@
 /* Catalogue : filtres par catégorie et recherche gardés dans l'adresse (?categorie=…&q=…),
    recherche sans accents, majuscules ni pluriels, passage en fondu sans moment vide,
    retour au début du catalogue s'il a raccourci au-dessus de l'écran. */
-import { aller } from '../socle/index.js?v=1';
-import { textes, remplir, calme } from './outils.js?v=1';
+import { aller } from '../socle/index.js?v=2';
+import { textes, remplir, calme } from './outils.js?v=2';
 
 const normaliser = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
   .replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(Boolean).map((m) => (m.length > 3 ? m.replace(/(s|x)$/, '') : m));
@@ -42,7 +42,7 @@ export function initCatalogue() {
       venir.forEach((c) => { c.hidden = false; c.classList.add('masquee'); });
       requestAnimationFrame(() => requestAnimationFrame(() => venir.forEach((c) => c.classList.remove('masquee'))));
       if (aucun) aucun.hidden = garder.length > 0;
-      if (resultat) resultat.textContent = remplir(T.resultats, { n: garder.length });
+      if (resultat) resultat.textContent = remplir(T.resultats, { n: garder.length, s: garder.length > 1 ? 's' : '' });
       if (ramener && haut < 0) aller(zone, { instant: calme() });
     };
     clearTimeout(minuteur);
