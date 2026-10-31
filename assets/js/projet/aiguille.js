@@ -3,8 +3,8 @@
    s'efface en moins d'une seconde (canvas 2D plein écran, dessiné seulement tant qu'il reste des points).
    Sur un lien ou un bouton, l'aiguille pique (petit enfoncement) ; dans un champ de saisie, le curseur
    normal revient. Mode calme, tactile : rien. */
-import { etat } from '../socle/index.js?v=2';
-import { souris } from './outils.js?v=2';
+import { etat } from '../socle/index.js?v=3';
+import { souris } from './outils.js?v=3';
 
 const VIE = 850; /* ms */
 

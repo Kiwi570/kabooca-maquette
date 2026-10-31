@@ -1,8 +1,8 @@
 /* Les quatre lignes : galerie horizontale épinglée sur ordinateur (barre de progression, arrêt en douceur
    sur chaque carte), glissement au doigt sur téléphone. Les croquis pendent à leur suspente et se balancent
    avec une physique de pendule (souris et vitesse de la galerie), calculée selon le temps écoulé. */
-import { boucle, etat } from '../socle/index.js?v=2';
-import { souris } from './outils.js?v=2';
+import { boucle, etat } from '../socle/index.js?v=3';
+import { souris } from './outils.js?v=3';
 
 export function initGalerie() {
   const section = document.querySelector('.collections');

@@ -2,7 +2,7 @@
    0,05 s l'aiguille part sur la couture ; le fil pique le logo à mesure qu'elle passe ;
    0,95 s le logo se remplit ; 1,3 s la couture se tend ; 1,45 s elle s'ouvre en deux rabats ;
    1,55 s le premier écran de la page se met en place. Le patron du logo est visible dès la première image. */
-import { dessiner } from './croquis.js?v=2';
+import { dessiner } from './croquis.js?v=3';
 
 const gsap = () => window.gsap;
 let decoupes = [];

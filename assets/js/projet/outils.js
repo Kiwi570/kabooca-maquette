@@ -1,5 +1,5 @@
 /* Outils communs du projet : textes (lus dans la page), annonces aux lecteurs d'écran, détection de la souris. */
-import { etat } from '../socle/index.js?v=2';
+import { etat } from '../socle/index.js?v=3';
 
 let cache = null;
 export function textes() {

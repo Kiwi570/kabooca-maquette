@@ -1,6 +1,6 @@
 /* Croquis : teintes (variables CSS), passage d'une teinte à l'autre en cercle depuis la pastille touchée,
    initiales brodées sur l'écusson, tracé qui se dessine sur la fiche. */
-import { calme, teinte } from './outils.js?v=2';
+import { calme, teinte } from './outils.js?v=3';
 
 const gsap = () => window.gsap;
 

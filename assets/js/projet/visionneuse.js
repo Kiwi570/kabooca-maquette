@@ -1,8 +1,8 @@
 /* Visionneuse des détails (fiches) : s'ouvre depuis la vignette, à la bonne taille ; flèches du clavier,
    glissement et Échap ; chaque vue a son lien (#detail-n) qui l'ouvre directement ; focus gardé puis rendu.
    Loupe compte-fils sur l'image affichée (souris seulement), éteinte à la fermeture. */
-import { bloquerDefilement, debloquerDefilement, suivre, lacher, quand } from '../socle/index.js?v=2';
-import { textes, remplir, souris, calme, garderFocus } from './outils.js?v=2';
+import { bloquerDefilement, debloquerDefilement, suivre, lacher, quand } from '../socle/index.js?v=3';
+import { textes, remplir, souris, calme, garderFocus } from './outils.js?v=3';
 
 let loupe = null;
 

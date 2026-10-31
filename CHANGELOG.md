@@ -2,6 +2,14 @@
 
 Chaque version ajoute sa partie en tête de ce fichier, construite en comparant l'archive précédente et la nouvelle, jamais de mémoire.
 
+## v3 — cuir vivant au repos (31 octobre 2026)
+
+Comparaison des archives v2 et v3 : un seul script modifié (cuir.js) ; ailleurs, seul le numéro de version passe de ?v=2 à ?v=3.
+
+- Cuir vivant : le creux sous la souris ne se forme plus que tant qu'elle bouge. Souris immobile, l'empreinte se résorbe en moins d'une seconde et aucune nouvelle empreinte n'est laissée : plus de cratère qui se creuse sur place. Un clic maintenu ne creuse plus qu'un instant.
+- Sécurité dans le dessin WebGL : profondeur et pente du creux plafonnées (plus de traînées étirées autour du curseur).
+- En mouvement, le rendu est inchangé.
+
 ## v2 — la version vivante (30 octobre 2026)
 
 Comparaison des archives v1 et v2 : 10 scripts ajoutés (aiguille, cigale, cuir, fil, mètre, nuancier, patron, relief, ruban, titres), 1 retiré (lumiere.js, remplacé par cuir.js) ; styles, textes, gabarits, pages et 3 scripts du socle (transitions, ouverture, sommaire) modifiés. Dans les autres scripts, seul le numéro de version passe de ?v=1 à ?v=2.

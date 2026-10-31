@@ -2,7 +2,7 @@
   "nom": "Kabooça",
   "adresse": "https://kabooca-maquette.vercel.app",
   "siteActuel": "kabooca.fr",
-  "version": 2,
+  "version": 3,
   "langues": ["fr"],
   "navigation": ["accueil", "boutique", "sur-mesure", "maison", "contact"],
   "actionEntete": { "page": "sur-mesure", "ancre": "configurateur" },

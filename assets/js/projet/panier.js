@@ -1,8 +1,8 @@
 /* Panier simulé : une seule source (localStorage), identique dans tous les onglets (événement storage),
    donnée abîmée nettoyée au chargement sans rien bloquer, tiroir avec focus gardé et Échap,
    pièce qui s'envole vers le panier, commande simulée qui vide le panier. */
-import { bloquerDefilement, debloquerDefilement, suivre, lacher } from '../socle/index.js?v=2';
-import { textes, remplir, annoncer, calme, local, garderFocus } from './outils.js?v=2';
+import { bloquerDefilement, debloquerDefilement, suivre, lacher } from '../socle/index.js?v=3';
+import { textes, remplir, annoncer, calme, local, garderFocus } from './outils.js?v=3';
 
 const CLE = 'kabooca:panier';
 let racine, liste, vide, pied, message, bouton, compte, modeles;

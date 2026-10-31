@@ -2,9 +2,9 @@
    le croquis se décompose en pièces numérotées, les cotes se tracent, puis il se réassemble aux couleurs
    choisies par le visiteur. Sur téléphone et écran bas : il s'éclate une fois à l'écran, un bouton le
    réassemble. En mode calme : éclaté, en couleurs, repères visibles, sans mouvement. */
-import { etat } from '../socle/index.js?v=2';
-import { local, teinte } from './outils.js?v=2';
-import { variables, appliquer } from './croquis.js?v=2';
+import { etat } from '../socle/index.js?v=3';
+import { local, teinte } from './outils.js?v=3';
+import { variables, appliquer } from './croquis.js?v=3';
 
 const ECART = {
   sangle: { y: -70 }, rabat: { y: -28 }, 'soufflet-g': { x: -45 }, 'soufflet-d': { x: 45 }, languettes: { y: 40 }, corps: {},

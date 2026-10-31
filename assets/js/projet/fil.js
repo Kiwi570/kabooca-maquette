@@ -4,7 +4,7 @@
    piqûre), puis se noue près de la cigale du pied de page. L'aiguille se tient aux deux tiers de l'écran.
    Le tracé est calculé une fois (et à chaque recalcul de ScrollTrigger) ; pendant le défilement, seuls la
    découpe du fil et la position de l'aiguille changent (aucune mesure). Mode calme : fil entier, sans aiguille. */
-import { etat, quand } from '../socle/index.js?v=2';
+import { etat, quand } from '../socle/index.js?v=3';
 
 const NS = 'http://www.w3.org/2000/svg';
 const TETE = 0.64;

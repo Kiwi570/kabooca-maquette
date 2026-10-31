@@ -2,8 +2,8 @@
    se décalent selon leur profondeur (sangle au fond, rabat et languettes devant) ; au survol, le rabat de la
    besace s'ouvre en basculant au-dessus de sa charnière. Au doigt, le rabat s'entrouvre une fois quand le
    croquis arrive à l'écran. Seules deux variables CSS changent au mouvement. Mode calme : rien. */
-import { etat } from '../socle/index.js?v=2';
-import { souris } from './outils.js?v=2';
+import { etat } from '../socle/index.js?v=3';
+import { souris } from './outils.js?v=3';
 
 const EXCLUS = '.eclatee-croquis, .panier-croquis, .modele-croquis .croquis, .carte-croquis .croquis';
 

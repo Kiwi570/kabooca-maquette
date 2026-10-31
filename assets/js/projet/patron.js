@@ -4,9 +4,9 @@
    Ordinateur : scène épinglée pilotée par le défilement. Téléphone et écran bas : jouée une fois à l'écran,
    bouton « Rejouer ». Mode calme et sans JavaScript : le sac assemblé (état final, posé par le CSS).
    Seules des variables CSS sont animées (aucune opacité ni découpe sur les pièces 3D, qui resteraient à plat). */
-import { etat } from '../socle/index.js?v=2';
-import { variables, appliquer } from './croquis.js?v=2';
-import { local } from './outils.js?v=2';
+import { etat } from '../socle/index.js?v=3';
+import { variables, appliquer } from './croquis.js?v=3';
+import { local } from './outils.js?v=3';
 
 const DEPART = { '--trace': 0, '--cuir': 0, '--plie-souf': 0, '--plie-fond': 0, '--plie-dos': 0, '--plie-dessus': 0, '--plie-rabat': 0, '--anse': 0, '--cam-y': 1, '--cam-s': 1, '--cam-rx': 0, '--cam-ry': 0, '--noms': 0 };
 

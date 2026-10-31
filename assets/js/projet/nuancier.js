@@ -3,8 +3,8 @@
    fil, aiguille…), avec un passage en cercle depuis la lame touchée (View Transitions quand le navigateur
    les connaît, sinon changement direct). Le choix est gardé pour les autres pages (appliqué avant le premier
    affichage par le script critique). Mode calme : éventail ouvert, changement direct. */
-import { etat } from '../socle/index.js?v=2';
-import { local, annoncer, textes } from './outils.js?v=2';
+import { etat } from '../socle/index.js?v=3';
+import { local, annoncer, textes } from './outils.js?v=3';
 
 const html = document.documentElement;
 

@@ -7,8 +7,8 @@
    densité de pixels limitée ; qualité réduite d'elle-même si les images sont lentes. Sans WebGL : les photos.
    Partout (téléphone compris) : les photos s'étirent légèrement selon la vitesse de défilement, comme un cuir
    souple (transformations seules, rien n'est mesuré pendant le défilement). */
-import { boucle, quand, etat } from '../socle/index.js?v=2';
-import { souris } from './outils.js?v=2';
+import { boucle, quand, etat } from '../socle/index.js?v=3';
+import { souris } from './outils.js?v=3';
 
 const N = 6;
 const VS = `attribute vec2 p; varying vec2 v; void main(){ v = p * .5 + .5; gl_Position = vec4(p, 0., 1.); }`;
@@ -22,7 +22,7 @@ float creux(vec2 q){
   float h = 0.;
   for (int i = 0; i < ${N}; i++) { vec2 d = q - presse[i].xy * asp; h -= presse[i].z * exp(-dot(d, d) * 34.); }
   if (clic.z < 1.) { float k = distance(q, clic.xy * asp) - clic.z * .5; h += .6 * exp(-k * k * 300.) * (1. - clic.z); }
-  return h;
+  return max(h, -1.2);
 }
 void main(){
   float rs = res.x / res.y, ri = img.x / img.y;
@@ -34,6 +34,7 @@ void main(){
   if (actif > .5) {
     h0 = creux(q);
     g = vec2(creux(q + vec2(e, 0.)) - h0, creux(q + vec2(0., e)) - h0) / e;
+    g *= min(1., 4.5 / (length(g) + .0001));
   }
   vec2 w = v + vec2(0., sin(v.x * 8. + temps * 1.6) * onde * .007 + decal);
   w -= g * .0045;
@@ -137,23 +138,34 @@ function creerRendu(classe) {
   return r;
 }
 
-/* Creux : [0] suit le pointeur, [1..5] sont les empreintes laissées derrière lui, qui se résorbent. */
+/* Creux : [0] suit le pointeur, [1..5] sont les empreintes laissées derrière lui, qui se résorbent.
+   Le cuir ne se creuse que tant que la souris bouge : immobile, l'empreinte se résorbe en moins d'une
+   seconde, et aucune nouvelle empreinte n'est laissée : elles ne s'empilent jamais sur place en cratère. */
 function empreintes() {
   const pts = Array.from({ length: N }, () => ({ x: 0.5, y: 0.5, z: 0 }));
-  let dernier = 0, appui = 0, vise = 0;
+  let dernier = 0, appui = 0, dedans = false, bouge = -9;
+  const maintenant = () => performance.now() / 1000;
   return {
     pts,
-    suivre(x, y, dedans) { pts[0].x = x; pts[0].y = y; vise = dedans ? 0.5 : 0; },
-    appuyer(v) { appui = v ? 1 : 0; },
-    pas(dt, t) {
-      const cible = Math.max(vise, appui ? 0.95 : 0);
-      pts[0].z += (cible - pts[0].z) * (1 - Math.exp(-dt * 9));
-      if (t - dernier > 0.07 && pts[0].z > 0.05) {
+    suivre(x, y, d) {
+      if (Math.hypot(x - pts[0].x, y - pts[0].y) > 0.002) bouge = maintenant();
+      pts[0].x = x; pts[0].y = y; dedans = d;
+    },
+    appuyer(v) { appui = v ? 1 : 0; if (v) bouge = maintenant(); },
+    pas(dt) {
+      const repos = maintenant() - bouge;
+      /* En mouvement : 0,5 ; immobile depuis plus de 0,25 s : l'empreinte se résorbe. Clic : plus marqué, brièvement. */
+      const vise = dedans && repos < 0.25 ? 0.5 : 0;
+      const presse = appui && repos < 0.6 ? 0.8 : 0;
+      const cible = Math.max(vise, presse);
+      pts[0].z += (cible - pts[0].z) * (1 - Math.exp(-dt * (cible > pts[0].z ? 9 : 3.5)));
+      const t = maintenant();
+      if (t - dernier > 0.07 && pts[0].z > 0.05 && repos < 0.25) {
         dernier = t;
         for (let i = N - 1; i > 1; i--) Object.assign(pts[i], pts[i - 1]);
         pts[1].x = pts[0].x; pts[1].y = pts[0].y; pts[1].z = pts[0].z * 0.8;
       }
-      for (let i = 1; i < N; i++) pts[i].z *= Math.exp(-dt * 2.2);
+      for (let i = 1; i < N; i++) pts[i].z *= Math.exp(-dt * 2.6);
       return pts.some((p) => p.z > 0.01);
     },
     ecrire(arr) { pts.forEach((p, i) => { arr[i * 3] = p.x; arr[i * 3 + 1] = p.y; arr[i * 3 + 2] = p.z; }); },
@@ -212,7 +224,7 @@ function heros() {
       cx += (tx - cx) * k; cy += (ty - cy) * k;
       force += (1 - force) * (1 - Math.exp(-dt * 1.5));
       if (r.clic[2] < 1) r.clic[2] += dt * 0.9;
-      e.pas(dt, temps);
+      e.pas(dt);
       e.ecrire(r.presse);
       r.dessiner({ lum: [cx, cy], force, temps });
       if (performance.now() - t0 > 12) { if (++lents > 6 && r.qualite > 0.3) { r.qualite = r.qualite > 0.7 ? 0.6 : r.qualite > 0.45 ? 0.45 : 0.3; lents = 0; r.taille(); } } else lents = Math.max(0, lents - 1);
@@ -270,7 +282,7 @@ function survols() {
     cumul = 0; temps += dt;
     force += ((sortie ? 0 : 1) - force) * (1 - Math.exp(-dt * 4));
     if (r.clic[2] < 1) r.clic[2] += dt * 0.9;
-    const vivant = e.pas(dt, temps);
+    const vivant = e.pas(dt);
     e.ecrire(r.presse);
     const img = r.img;
     const decal = img && window.gsap ? (window.gsap.getProperty(img, 'yPercent') || 0) / 100 : 0;

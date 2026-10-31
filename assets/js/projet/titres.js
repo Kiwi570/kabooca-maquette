@@ -3,7 +3,7 @@
    à étiqueter. Déclenché au moment exact où le socle rend l'élément visible (.vu), dans la même image :
    rien n'est visible avant son animation. Au retour, en mode calme et en secours : rien ne bouge.
    Le texte d'origine est rendu à la fin (lecteurs d'écran, redimensionnement). */
-import { etat } from '../socle/index.js?v=2';
+import { etat } from '../socle/index.js?v=3';
 
 const html = document.documentElement;
 const SIGNES = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

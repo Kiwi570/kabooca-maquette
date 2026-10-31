@@ -1,7 +1,7 @@
 /* Cigale qui bat des ailes : la cigale de l'en-tête bat des ailes selon la vitesse de défilement, puis se pose
    (ailes refermées) quand le défilement s'arrête. Sa boucle ne tourne que pendant le battement.
    Sur le voile, elle bat des ailes pendant que le rabat tombe. Mode calme : immobile. */
-import { etat, quand } from '../socle/index.js?v=2';
+import { etat, quand } from '../socle/index.js?v=3';
 
 export function initCigale() {
   if (etat.calme) return;

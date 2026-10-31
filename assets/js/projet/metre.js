@@ -3,7 +3,7 @@
    du bord, lit la mesure en centimètres. Ordinateur et tablette (le bord manque sur téléphone). Le ruban est
    recalculé avec la page (ScrollTrigger), jamais pendant le défilement ; seule la lecture change. Mode calme :
    ruban affiché, lecture mise à jour sans animation. */
-import { quand } from '../socle/index.js?v=2';
+import { quand } from '../socle/index.js?v=3';
 
 const CM = 96 / 2.54;
 

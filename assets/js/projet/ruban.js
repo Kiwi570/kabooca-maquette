@@ -1,7 +1,7 @@
 /* Ruban qui accélère : le bandeau « SUR MESURE • PERSONNALISÉ • KABOOÇA » défile tout seul, accélère avec le
    défilement de la page, change de sens quand on remonte et s'incline avec la vitesse, puis reprend son allure.
    Boucle du socle (arrêtée hors écran, onglet caché, mode calme) ; le bouton Pause l'arrête. */
-import { boucle, etat } from '../socle/index.js?v=2';
+import { boucle, etat } from '../socle/index.js?v=3';
 
 export function initRuban() {
   const ruban = document.querySelector('[data-ruban]');
