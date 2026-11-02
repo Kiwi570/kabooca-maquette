@@ -7,8 +7,8 @@
    densité de pixels limitée ; qualité réduite d'elle-même si les images sont lentes. Sans WebGL : les photos.
    Partout (téléphone compris) : les photos s'étirent légèrement selon la vitesse de défilement, comme un cuir
    souple (transformations seules, rien n'est mesuré pendant le défilement). */
-import { boucle, quand, etat } from '../socle/index.js?v=3';
-import { souris } from './outils.js?v=3';
+import { boucle, quand, etat } from '../socle/index.js?v=4';
+import { souris } from './outils.js?v=4';
 
 const N = 6;
 const VS = `attribute vec2 p; varying vec2 v; void main(){ v = p * .5 + .5; gl_Position = vec4(p, 0., 1.); }`;

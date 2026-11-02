@@ -1,8 +1,8 @@
 /* Micro-interactions : boutons magnétiques et cartes inclinables (souris seulement), images révélées le long
    d'une couture, parallaxe des grandes images, FAQ dépliée sans à-coup, tracé du plan d'accès,
    retour en haut (sous le voile pour un grand saut). Rien ne lit la mise en page pendant le défilement. */
-import { etat, allerAncre } from '../socle/index.js?v=3';
-import { souris } from './outils.js?v=3';
+import { etat, allerAncre } from '../socle/index.js?v=4';
+import { souris } from './outils.js?v=4';
 
 const gsap = () => window.gsap;
 

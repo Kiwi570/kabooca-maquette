@@ -2,6 +2,13 @@
 
 Chaque version ajoute sa partie en tête de ce fichier, construite en comparant l'archive précédente et la nouvelle, jamais de mémoire.
 
+## v4 — marges du patron, lecture du mètre (2 novembre 2026)
+
+Comparaison des archives v3 et v4 : une feuille de style modifiée (site.css, deux règles) ; ailleurs, seul le numéro de version passe de ?v=3 à ?v=4.
+
+- Atelier sur mesure, section « Du patron au sac » sur ordinateur : le bloc reprend la largeur et les marges du reste du site (le texte n'est plus collé au bord gauche, le schéma ne passe plus sous le mètre ruban).
+- Mètre ruban : la lecture affiche bien « cm » (un caractère d'échappement mal fermé affichait un signe cassé à la place du « c »).
+
 ## v3 — cuir vivant au repos (31 octobre 2026)
 
 Comparaison des archives v2 et v3 : un seul script modifié (cuir.js) ; ailleurs, seul le numéro de version passe de ?v=2 à ?v=3.

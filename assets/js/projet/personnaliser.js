@@ -1,7 +1,7 @@
 /* « Personnaliser en trois temps » (accueil) : les pastilles teintent le croquis en cercle depuis la pastille,
    les initiales se brodent sur l'écusson, le lien vers l'atelier emporte ces choix dans son adresse. */
-import { local, textes } from './outils.js?v=3';
-import { variables, appliquer, changerTeintes, initiales } from './croquis.js?v=3';
+import { local, textes } from './outils.js?v=4';
+import { variables, appliquer, changerTeintes, initiales } from './croquis.js?v=4';
 
 export function initPersonnaliser() {
   const zone = document.querySelector('[data-perso]');

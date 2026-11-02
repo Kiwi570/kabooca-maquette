@@ -769,7 +769,7 @@ html.js:not(.calme) main .media picture { will-change: transform; }
     box-shadow: inset 1px 0 0 rgba(30, 31, 28, .2), -3px 0 8px rgba(0, 0, 0, .08); }
   .metre-nombre { position: absolute; left: calc(var(--l) - 8px); writing-mode: vertical-rl; transform: translate(-50%, -50%) rotate(180deg); font: 500 12px/1 var(--police-mono); color: var(--graphite); }
   .metre-lecture { --l: 22px; position: fixed; right: 0; top: 50%; z-index: 8; display: block; width: var(--l); padding: 8px 0; writing-mode: vertical-rl; transform: translateY(-50%) rotate(180deg); line-height: var(--l); text-align: center; white-space: nowrap; border-radius: 0 4px 4px 0; background: var(--orange-texte); color: #fff; font: 600 12px/var(--l) var(--police-mono); box-shadow: 0 2px 10px rgba(0, 0, 0, .22); pointer-events: none; }
-  .metre-lecture::after { content: attr(data-valeur) '\00a0cm'; }
+  .metre-lecture::after { content: attr(data-valeur) '\00a0 cm'; }
   .metre-lecture::before { content: ''; position: absolute; left: 100%; top: 50%; width: 12px; height: 2px; margin-top: -1px; background: var(--orange); }
 }
 @media (min-width: 1200px) { .metre, .metre-lecture { --l: 28px; } }
@@ -850,7 +850,6 @@ html.js:not(.calme) main .media picture { will-change: transform; }
 .patron-vue .badge-croquis { left: 12px; bottom: 12px; }
 @media (min-width: 1001px) and (min-height: 601px) {
   .patron-scene { min-height: 100svh; display: flex; align-items: center; padding-block: calc(var(--entete-h) + 12px) 20px; }
-  .patron-scene > .conteneur { width: 100%; }
 }
 @media (max-width: 1000px) {
   .patron-grille { grid-template-columns: 1fr; }
